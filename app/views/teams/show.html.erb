@@ -3,10 +3,13 @@
 <%= @team.logo %>
 Est: <%= @team.created_at.year %>
 
+<!--
 <div class="add_player">
-	<%= link_to "Add Player", :new_player, :remote => true %>
+	<%#= link_to "Add Player", :new_player, :remote => true %>
 </div>
-
+-->
+<br />
+<br />
 <table>
 	<thead>
 		<tr>
@@ -28,7 +31,7 @@ Est: <%= @team.created_at.year %>
 			<th>SO</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody class="players">
 
 
 	</tbody>

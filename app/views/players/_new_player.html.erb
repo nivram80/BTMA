@@ -6,19 +6,33 @@
 	<%= f.text_field :lname %>
 
 	<%= f.label "Date of Birth" %>
-	<%= f.text_field :dob %>
-
-	<%= f.label :email %>
-	<%= f.text_field :email %>
+	<%= f.date_select :dob, 
+				start_year: Time.now.year - 70, 
+				end_year: Time.now.year - 5, 
+				use_short_month: true, 
+				order: [:month, :day, :year] %>
+	<br />
 
 	<%= f.label :phone %>
 	<%= f.text_field :phone %>
+	
+	<%= f.label :email %>
+	<%= f.text_field :email %>
 
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+
+	<%= f.label :password_confirmation %>
+	<%= f.password_field :password_confirmation %>
+
+	<br />
 	<%= f.label :throws %>
-	<%= f.password_field :throws %>
+	<%= f.select(:throws, options_for_select([['Right', 'Right'], ['Left', 'Left'], ['Switch', 'Switch']])) %>
 
 	<%= f.label :bats %>
-	<%= f.password_field :bats %>
+	<%= f.select(:bats, options_for_select([['Right', 'Right'], ['Left', 'Left'], ['Switch', 'Switch']])) %>
+
+	<%= f.hidden_field :team_id, :value => params[:id] %>
 
 	<%= f.submit %>
 <% end %>

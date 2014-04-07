@@ -9,10 +9,20 @@ class PlayersController < ApplicationController
 
   def new
     @player = Player.new
+
+    respond_to do |format|
+      format.html
+      format.js 
+    end 
   end
 
   def create
     @player = Player.create(params[:player])
+    binding.pry
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit
