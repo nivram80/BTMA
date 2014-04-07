@@ -17,12 +17,21 @@ class PlayersController < ApplicationController
   end
 
   def create
-    @player = Player.create(params[:player])
-    binding.pry
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    @player = Player.new(params[:player])
+    
+    if @player.save
+      session[:player_id] = @player_id
+      redirect_to :root
+     else
+      render “new”
+     end
+
+if @user.save # password is converted to digest
+          session[:user_id] = @user_id # Automatically signs in user when they sign up
+          redirect_to :root
+     else
+          render “new”
+     end
   end
 
   def edit

@@ -15,7 +15,7 @@
 
 	<%= f.label :phone %>
 	<%= f.text_field :phone %>
-	
+
 	<%= f.label :email %>
 	<%= f.text_field :email %>
 
@@ -33,6 +33,7 @@
 	<%= f.select(:bats, options_for_select([['Right', 'Right'], ['Left', 'Left'], ['Switch', 'Switch']])) %>
 
 	<%= f.hidden_field :team_id, :value => params[:id] %>
-
+	<br />
+	<br />
 	<%= f.submit %>
 <% end %>
