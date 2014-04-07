@@ -1,15 +1,15 @@
+<%= @team.logo %>
 <h1><%= @team.nickname %></h1>
 <%= @team.city %>
-<%= @team.logo %>
-Est: <%= @team.created_at.year %>
+<p>Est: <%= @team.created_at.year %></p>
+<p>Team ID: <%= @team.id %></p>
 
 <!--
 <div class="add_player">
 	<%#= link_to "Add Player", :new_player, :remote => true %>
 </div>
 -->
-<br />
-<br />
+
 <table>
 	<thead>
 		<tr>
@@ -32,7 +32,36 @@ Est: <%= @team.created_at.year %>
 		</tr>
 	</thead>
 	<tbody class="players">
+			<% @players.each do |p| %>
+				<tr class="player">
+					<td><%= p.fullname %></td>
+					<td><%#= p.positions %></td>
+					<td><%= p.bats %>/<%= p.throws %></td>
+				</tr>
+			<% end %>
+	</tbody>
+</table>
 
-
+<table>
+	<thead>
+		<tr>
+			<th>Coaches</th>
+		</tr>
+		<tr>
+			<th>Coach</th>
+			<th>Manager</th>
+			<th>First Base</th>
+			<th>Third Base</th>
+		</tr>
+	</thead>
+	<tbody class="coaches">
+			<% @coaches.each do |c| %>
+				<tr class="coach">
+					<td><%= c.fullname %></td>
+					<td><%= c.manager %></td>
+					<td><%= c.first_base %></td>
+					<td><%= c.third_base %></td>
+				</tr>
+			<% end %>
 	</tbody>
 </table>

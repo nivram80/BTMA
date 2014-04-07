@@ -1,0 +1,47 @@
+<%= form_for @coach do |f| %>
+
+	<p>
+		<%= f.label "Team ID:*" %>
+		<%= f.text_field :team_id %>
+	</p>
+	<p>
+		<%= f.label "First Name" %>
+		<%= f.text_field :fname %>
+	</p>
+	<p>
+		<%= f.label "Last Name" %>
+		<%= f.text_field :lname %>
+	</p>
+	<p>
+		<%= f.label :phone %>
+		<%= f.text_field :phone %>
+	</p>
+	<p>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</p>
+	<p>
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation %>
+	</p>
+	<p>
+		<%= f.label :manager %>
+		<%= f.check_box :manager %>
+	</p>
+	<p>
+		<%= f.label :first_base %>
+		<%= f.check_box :first_base %>
+	</p>
+	<p>
+		<%= f.label :third_base %>
+		<%= f.check_box :third_base %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+<p>*Your manager has to supply you with the "Team ID".</p>

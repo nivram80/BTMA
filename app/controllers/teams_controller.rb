@@ -5,6 +5,8 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    @players = Player.where(team_id: params[:id])
+    @coaches = Coach.where(team_id: params[:id])
   end
 
   def new
@@ -21,7 +23,7 @@ class TeamsController < ApplicationController
 
   def update
     @team = Team.find(params[:id])
-    @team = Team.update_attributes(params[:team])
+    @team.update_attributes(params[:team])
   end
 
   def destroy

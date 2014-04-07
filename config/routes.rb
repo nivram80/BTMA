@@ -4,6 +4,7 @@ Btma::Application.routes.draw do
   resources :logins
   resources :teams
   resources :players
+  resources :coaches
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

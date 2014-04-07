@@ -9,11 +9,6 @@ class PlayersController < ApplicationController
 
   def new
     @player = Player.new
-
-    respond_to do |format|
-      format.html
-      format.js 
-    end 
   end
 
   def create
@@ -34,7 +29,7 @@ class PlayersController < ApplicationController
 
   def update
     @player = Player.find(params[:id])
-    @player = Player.update_attributes(params[:player])
+    @player.update_attributes(params[:player])
   end
 
   def destroy
