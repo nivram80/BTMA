@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  team_id: 1
+  fname: MyString
+  lname: MyString
+  email: MyString
+  phone: MyString
+  password_digest: MyString
+  manager: false
+  first_base: false
+  third_base: false
+
+two:
+  team_id: 1
+  fname: MyString
+  lname: MyString
+  email: MyString
+  phone: MyString
+  password_digest: MyString
+  manager: false
+  first_base: false
+  third_base: false

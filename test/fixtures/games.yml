@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  home_team: false
+  ballpark: MyString
+  city: MyString
+  game_datetime: 2014-04-07 10:03:47
+  fahr_temp: 1
+  weather_id: 1
+
+two:
+  home_team: false
+  ballpark: MyString
+  city: MyString
+  game_datetime: 2014-04-07 10:03:47
+  fahr_temp: 1
+  weather_id: 1

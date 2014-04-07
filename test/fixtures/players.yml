@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  team_id: 1
+  fname: MyString
+  lname: MyString
+  dob: 2014-04-07
+  email: MyString
+  phone: MyString
+  password_digest: MyString
+  throws: MyString
+  bats: MyString
+
+two:
+  team_id: 1
+  fname: MyString
+  lname: MyString
+  dob: 2014-04-07
+  email: MyString
+  phone: MyString
+  password_digest: MyString
+  throws: MyString
+  bats: MyString
