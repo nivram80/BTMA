@@ -30,6 +30,8 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
     @player.update_attributes(params[:player])
+
+    redirect_to ("/teams/#{params[:player][:team_id]}")
   end
 
   def destroy
