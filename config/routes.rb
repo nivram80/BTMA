@@ -1,6 +1,6 @@
 Btma::Application.routes.draw do
 
-  root :to => 'players#index'
+  root :to => 'teams#show'
   resources :teams
   resources :players
 
