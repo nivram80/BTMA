@@ -1,4 +1,9 @@
 Btma::Application.routes.draw do
+
+  root :to => 'players#index'
+  resources :teams
+  resources :players
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
