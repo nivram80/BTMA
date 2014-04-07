@@ -1,39 +1,51 @@
 <%= form_for @player do |f| %>
-	<%= f.label "First Name" %>
-	<%= f.text_field :fname %>
 
-	<%= f.label "Last Name" %>
-	<%= f.text_field :lname %>
-
-	<%= f.label "Date of Birth" %>
-	<%= f.date_select :dob, 
+	<p>
+		<%= f.label "Team ID:*" %>
+		<%= f.text_field :team_id %>
+	</p>
+	<p>
+		<%= f.label "First Name" %>
+		<%= f.text_field :fname %>
+	</p>
+	<p>
+		<%= f.label "Last Name" %>
+		<%= f.text_field :lname %>
+	</p>
+	<p>
+		<%= f.label "Date of Birth:" %>
+		<%= f.date_select :dob, 
 				start_year: Time.now.year - 70, 
 				end_year: Time.now.year - 5, 
 				use_short_month: true, 
 				order: [:month, :day, :year] %>
-	<br />
-
-	<%= f.label :phone %>
-	<%= f.text_field :phone %>
-
-	<%= f.label :email %>
-	<%= f.text_field :email %>
-
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-
-	<%= f.label :password_confirmation %>
-	<%= f.password_field :password_confirmation %>
-
-	<br />
-	<%= f.label :throws %>
-	<%= f.select(:throws, options_for_select([['Right', 'Right'], ['Left', 'Left'], ['Switch', 'Switch']])) %>
-
-	<%= f.label :bats %>
-	<%= f.select(:bats, options_for_select([['Right', 'Right'], ['Left', 'Left'], ['Switch', 'Switch']])) %>
-
-	<%= f.hidden_field :team_id, :value => params[:id] %>
-	<br />
-	<br />
-	<%= f.submit %>
+	</p>
+	<p>
+		<%= f.label :phone %>
+		<%= f.text_field :phone %>
+	</p>
+	<p>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</p>
+	<p>
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation %>
+	</p>
+	<p>
+		<%= f.label :throws %>
+		<%= f.select(:throws, options_for_select([['Right', 'Right'], ['Left', 'Left'], ['Switch', 'Switch']])) %>
+	</p>
+	<p>
+		<%= f.label :bats %>
+		<%= f.select(:bats, options_for_select([['Right', 'Right'], ['Left', 'Left'], ['Switch', 'Switch']])) %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
 <% end %>
+<p>*Your manager has to supply you with the "Team ID".</p>

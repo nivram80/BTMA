@@ -18,20 +18,14 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(params[:player])
+    @team = Team.find(params[:player][:team_id])
     
     if @player.save
       session[:player_id] = @player_id
-      redirect_to :root
-     else
-      render “new”
-     end
-
-if @user.save # password is converted to digest
-          session[:user_id] = @user_id # Automatically signs in user when they sign up
-          redirect_to :root
-     else
-          render “new”
-     end
+      redirect_to ("/teams/#{params[:player][:team_id]}")
+    else
+      render "new"
+    end
   end
 
   def edit
