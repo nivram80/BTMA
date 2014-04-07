@@ -3,6 +3,10 @@
 <%= @team.logo %>
 Est: <%= @team.created_at.year %>
 
+<div class="add_player">
+	<%= link_to "Add Player", :new_player, :remote => true %>
+</div>
+
 <table>
 	<thead>
 		<tr>
