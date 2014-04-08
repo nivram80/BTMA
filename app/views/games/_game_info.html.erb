@@ -6,11 +6,12 @@
 		</p>
 		<p>
 			<%= f.label :game_datetime %>
-			<%= f.date_select :game_datetime, 
+			<%= f.datetime_select :game_datetime, 
 				start_year: Time.now.year - 70, 
 				end_year: Time.now.year + 2, 
 				use_short_month: true, 
-				order: [:month, :day, :year] %>
+				order: [:month, :day, :year],
+				ampm: true %>
 		</p>
 		<p>
 			<%= f.label :city %>

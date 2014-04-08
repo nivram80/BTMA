@@ -1,5 +1,5 @@
 <h2>Game vs. <%= @game.opp_nickname %></h2>
-<p><%= @game.game_datetime %></p>
+<p><%= @game.game_datetime.strftime("%B %e, %Y - %I:%M %p") %></p>
 
 <table>
 	<thead>
@@ -23,6 +23,54 @@
 		</tr>
 	</thead>
 	<tbody>
-		
+		<% order = 1 %>
+		<% while order < 10 %>
+			<tr class="batter<%= order %>">
+				<td><%= order %></td>
+				<td><%= link_to("Add Player", :new_batter_game_stat)  %></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<% order += 1 %>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<table>
+	<thead>
+		<tr>
+			<th>Pitcher(s)</th>
+			<th>Start</th>
+			<th>Win</th>
+			<th>Loss</th>
+			<th>Save</th>
+			<th>CG</th>
+			<th>SHO</th>
+			<th>IP</th>
+			<th>Hits</th>
+			<th>Runs</th>
+			<th>ER</th>
+			<th>HR</th>
+			<th>HB</th>
+			<th>BB</th>
+			<th>IBB</th>
+			<th>SO</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= link_to("Add Player", :new_batter_game_stat)  %></td>
+		</tr>
 	</tbody>
 </table>

@@ -6,6 +6,7 @@ Btma::Application.routes.draw do
   resources :players
   resources :coaches
   resources :games
+  resources :batter_game_stats
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
