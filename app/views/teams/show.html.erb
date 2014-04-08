@@ -34,7 +34,7 @@
 	<tbody class="players">
 			<% @players.each do |p| %>
 				<tr class="player">
-					<td><%= p.fullname %></td>
+					<td><%= link_to(p.fullname, player_path(p.id)) %></td>
 					<td><%#= p.positions %></td>
 					<td><%= p.bats %>/<%= p.throws %></td>
 				</tr>
@@ -51,7 +51,7 @@
 			<th>Coach</th>
 			<th>Manager</th>
 			<th>First Base</th>
-			<th>Third Base</th>
+			<th>Third Base<%=  %></th>
 		</tr>
 	</thead>
 	<tbody class="coaches">
