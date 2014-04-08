@@ -1,0 +1,43 @@
+<%= form_for @game do |f| %>
+	<div class="game_info">
+		<p>
+			<%= f.label :home_team? %>
+			<%= f.check_box :home_team %>
+		</p>
+		<p>
+			<%= f.label :game_datetime %>
+			<%= f.date_select :game_datetime, 
+				start_year: Time.now.year - 70, 
+				end_year: Time.now.year + 2, 
+				use_short_month: true, 
+				order: [:month, :day, :year] %>
+		</p>
+		<p>
+			<%= f.label :city %>
+			<%= f.text_field :city %>
+		</p>
+		<p>
+			<%= f.label :ballpark %>
+			<%= f.text_field :ballpark %>
+		</p>
+		<p>
+			<%= f.label :opp_nickname %>
+			<%= f.text_field :opp_nickname %>
+		</p>
+		<p>
+			<%= f.label :opp_city %>
+			<%= f.text_field :opp_city %>
+		</p>
+		<p>
+			<%= f.label :fahr_temp %>
+			<%= f.text_field :fahr_temp %>
+		</p>
+		<p>
+			<%= f.label :weather_id %>
+			<%= f.collection_select(:weather_id, @weathers, :id, :conditions) %>
+		</p>
+		<p>
+			<%= f.submit "Add Game Info" %>
+		</p>
+	</div>
+<% end %>

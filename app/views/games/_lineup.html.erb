@@ -1,0 +1,4 @@
+<tr>
+	<%= form_for @batter_game_stat |f| %>
+	<td><%= f.collection_select(:player_id, @players, :id, :fullname) %></td>
+	<td><%= f.collection_select(:position_id, @positions, :id, :position) %></td>

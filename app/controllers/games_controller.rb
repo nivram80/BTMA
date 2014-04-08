@@ -10,10 +10,12 @@ class GamesController < ApplicationController
 
 	def new
 		@game = Game.new
+		@weathers = Weather.all
 	end
 
 	def create
 		@game = Game.create(params[:game])
+		redirect_to ("/games/#{@game.id}")
 	end
 
 	def edit
