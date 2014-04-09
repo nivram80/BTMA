@@ -75,9 +75,16 @@ nav a:hover {
 .stats thead {
 	background-color: #a04040;
 	color: #fff;
+	border-radius: 4px;
 }
 .stats th {
 	padding: 3px 12px;
+}
+.players tr:nth-child(odd), .coaches tr:nth-child(odd) {
+	background-color: #eee;
+}
+.players tr:nth-child(odd):hover, .coaches tr:nth-child(odd):hover {
+	background-color: #ccc;
 }
 .players td, .coaches td, .games td {
 	text-align: center;
@@ -87,7 +94,7 @@ nav a:hover {
 	text-decoration: none;
 }
 .player:hover, .coach:hover, .games:hover {
-	background-color: #ddd;
+	background-color: #ccc;
 }
 footer {
 	color: #313131;
