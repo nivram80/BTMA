@@ -35,7 +35,7 @@
 					<td><%= bs.sum(:bb) %></td>
 					<td><%= bs.sum(:ibb) %></td>
 					<td><%= bs.sum(:hb) %></td>
-					<td><%= (bs.sum(:hits)/bs.sum(:ab)).to_f %></td>
+					<td><%= number_with_precision(((bs.sum(:hits).to_d/bs.sum(:ab).to_d).to_d), :precision => 3) %></td>
 				</tr>
 			<% end %>
 	</tbody>
