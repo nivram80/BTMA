@@ -21,7 +21,7 @@ h1 {
 	margin-left: 30px;
 }
 h2 {
-	margin-bottom: 20px;
+
 }
 .left {
 	float: left;
@@ -70,6 +70,7 @@ nav a:hover {
 }
 .stats {
 	border-spacing: 0px;
+	margin-top: 20px;
 }
 .stats thead {
 	background-color: #a04040;

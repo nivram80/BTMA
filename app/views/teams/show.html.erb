@@ -22,9 +22,14 @@
 	<tbody class="players">
 			<% @players.each do |p| %>
 				<tr class="player">
+					<% bs = BatterGameStat.where(:player_id => p.id) %>
 					<td><%= link_to(p.fullname, player_path(p.id)) %></td>
-					<td><%#= p.positions %></td>
+					<td><%#= bs.position_id %></td>
 					<td><%= p.bats %>/<%= p.throws %></td>
+					<td><%= number_with_precision(((bs.sum(:hits).to_d/bs.sum(:ab).to_d).to_d), :precision => 3) %></td>
+					<td><%= bs.sum(:hr) %></td>
+					<td><%= bs.sum(:rbi) %></td>
+					<td><%= bs.sum(:sb) %></td>
 				</tr>
 			<% end %>
 	</tbody>
