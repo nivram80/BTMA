@@ -22,12 +22,12 @@
 			<th>CS</th>
 		</tr>
 	</thead>
-	<tbody>
-		<% order = 1 %>
-		<% while order < 10 %>
-			<tr class="batter<%= order %>">
-				<td><%= order %></td>
-				<td><%= link_to("Add Player", :new_batter_game_stat)  %></td>
+	<tbody class="batters">
+		<% batter_num = 1 %>
+		<% while batter_num < 10 %>
+			<tr class="batter<%= batter_num %>">
+				<td><%= batter_num %></td>
+				<td><%= link_to("Add Player", new_batter_game_stat_path(@batter_game_stat, :batter_num => batter_num), :remote => true)  %></td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -42,7 +42,7 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<% order += 1 %>
+				<% batter_num += 1 %>
 			</tr>
 		<% end %>
 	</tbody>
