@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
   def index
     @players = Player.order(:lname)
-    @team_stats = BatterGameStat.all
+    @team_stats = BatterGameStat.where("ab = '0'")
     #@pitcher_stats = PitcherGameStat.all
   end
 

@@ -6,6 +6,8 @@ class GamesController < ApplicationController
 
 	def show
 		@game = Game.find(params[:id])
+		@batter_stats = BatterGameStat.where(:game_id => params[:id])
+		binding.pry
 	end
 
 	def new

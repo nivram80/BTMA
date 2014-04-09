@@ -1,7 +1,7 @@
 <h2>Game vs. <%= @game.opp_nickname %></h2>
 <p><%= @game.game_datetime.strftime("%B %e, %Y - %I:%M %p") %></p>
 
-<table>
+<table class="stats">
 	<thead>
 		<tr>
 			<th>#</th>
@@ -22,32 +22,36 @@
 			<th>CS</th>
 		</tr>
 	</thead>
-	<tbody class="batters">
+	<tbody class="players">
 		<% batter_num = 1 %>
 		<% while batter_num < 10 %>
-			<tr class="batter<%= batter_num %>">
+			<tr class="player batter<%= batter_num %>">
 				<td><%= batter_num %></td>
-				<td><%= link_to("Add Player", new_batter_game_stat_path(@batter_game_stat, :batter_num => batter_num), :remote => true)  %></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<% @team_stats.each do |bs| %>
+					<% if !bs.player_id %> 
+						<td><%= link_to("Add Player", new_batter_game_stat_path(@batter_game_stat, :batter_num => batter_num), :remote => true)  %></td>
+					<% else %>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					<% end %>
 				<% batter_num += 1 %>
 			</tr>
 		<% end %>
 	</tbody>
 </table>
-<table>
+<table class="stats">
 	<thead>
 		<tr>
 			<th>Pitcher(s)</th>
@@ -68,10 +72,10 @@
 			<th>SO</th>
 		</tr>
 	</thead>
-	<tbody>
-		<tr class="pitchers">
+	<tbody class="players">
+		<tr class="player">
 		</tr>
-		<tr>
+		<tr class="add_player">
 			<td><%= link_to("Add Pitcher", :new_pitcher_game_stat, :remote => true)  %></td>
 		</tr>
 	</tbody>

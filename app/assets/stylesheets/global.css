@@ -89,7 +89,7 @@ nav a:hover {
 .players td, .coaches td, .games td {
 	text-align: center;
 }
-.player td a, .coach td a, .games td a {
+.player td a, .coach td a, .games td a, .add_player td a {
 	color: #a04040;
 	text-decoration: none;
 }
