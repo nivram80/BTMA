@@ -1,4 +1,4 @@
-<h2>Stats</h2>
+<h2>Team Stats</h2>
 <table class="stats">
 	<thead>
 		<tr>
@@ -16,6 +16,7 @@
 			<th>IBB</th>
 			<th>HB</th>
 			<th>AVG</th>
+			<th>OBP</th>
 		</tr>
 	</thead>
 	<tbody class="players">
@@ -36,7 +37,32 @@
 					<td><%= bs.sum(:ibb) %></td>
 					<td><%= bs.sum(:hb) %></td>
 					<td><%= number_with_precision(((bs.sum(:hits).to_d/bs.sum(:ab).to_d).to_d), :precision => 3) %></td>
+					<td><%= number_with_precision((((bs.sum(:hits) + bs.sum(:bb)).to_d / bs.sum(:ab).to_d).to_d), :precision => 3) %></td>
 				</tr>
 			<% end %>
 	</tbody>
+</table>
+<table class="stats">
+	<thead>
+		<tr>
+			<th>Pitcher(s)</th>
+			<th>Starts</th>
+			<th>Wins</th>
+			<th>Losses</th>
+			<th>Saves</th>
+			<th>CG</th>
+			<th>SHO</th>
+			<th>IP</th>
+			<th>Hits</th>
+			<th>Runs</th>
+			<th>ER</th>
+			<th>HR</th>
+			<th>HB</th>
+			<th>BB</th>
+			<th>IBB</th>
+			<th>SO</th>
+			<th>ERA</th>
+			<th>WHIP</th>
+		</tr>
+	</thead>
 </table>

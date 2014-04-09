@@ -20,6 +20,9 @@ h1 {
 	text-shadow: -2px 1px #a04040;
 	margin-left: 30px;
 }
+h2 {
+	margin-bottom: 20px;
+}
 .left {
 	float: left;
 }
@@ -58,7 +61,7 @@ nav a:hover {
 	margin: 30px 0 0 20px;
 }
 .content {
-	margin: 40px auto;
+	margin: 20px auto;
 	width: 90%;
 }
 .sections {
@@ -75,14 +78,14 @@ nav a:hover {
 .stats th {
 	padding: 3px 12px;
 }
-.players td, .coaches td {
+.players td, .coaches td, .games td {
 	text-align: center;
 }
-.player td a, coach td a {
+.player td a, .coach td a, .games td a {
 	color: #a04040;
 	text-decoration: none;
 }
-.player:hover, .coach:hover {
+.player:hover, .coach:hover, .games:hover {
 	background-color: #ddd;
 }
 footer {

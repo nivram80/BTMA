@@ -1,4 +1,20 @@
-<% @games.each do |g| %>
-	<p><%= g.opp_nickname %> - 
-	<%= g.game_datetime.strftime("%B %e, %Y - %I:%M %p") %></p>
-<% end %>
+<table class="stats">
+	<thead>
+		<tr>
+			<th>Oppenent</th>
+			<th>Date</th>
+			<th>Start Time</th>
+		</tr>
+	</thead>
+	<tbody class="games">
+		<% @games.each do |g| %>
+			<tr class="game">
+				<td><%= link_to g.opp_nickname, game_path(g.id) %></td>
+				<td><%= g.game_datetime.strftime("%B %e, %Y") %></td>
+				<td><%= g.game_datetime.strftime("%I:%M %p") %></td>
+			<tr>
+		<% end %>
+	</tbody>
+
+
+</table>
