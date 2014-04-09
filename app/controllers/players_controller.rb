@@ -1,6 +1,8 @@
 class PlayersController < ApplicationController
   def index
-    @players = Player.all
+    @players = Player.order(:lname)
+    @team_stats = BatterGameStat.all
+    #@pitcher_stats = PitcherGameStat.all
   end
 
   def show

@@ -1,2 +1,42 @@
-<h1>Players#index</h1>
-<p>Find me in app/views/players/index.html.erb</p>
+<h2>Stats</h2>
+<table>
+	<thead>
+		<tr>
+			<th>Position Players</th>
+			<th>AB</th>
+			<th>Hits</th>
+			<th>Runs</th>
+			<th>2B</th>
+			<th>3B</th>
+			<th>HR</th>
+			<th>RBI</th>
+			<th>SB</th>
+			<th>CS</th>
+			<th>BB</th>
+			<th>IBB</th>
+			<th>HB</th>
+			<th>AVG</th>
+		</tr>
+	</thead>
+	<tbody class="players">
+			<% @players.each do |p| %>
+				<tr class="player">
+					<td><%= link_to(p.fullname, player_path(p.id)) %></td>
+					<% bs = BatterGameStat.where(:player_id => p.id) %>
+					<td><%= bs.sum(:ab) %></td>
+					<td><%= bs.sum(:hits) %></td>
+					<td><%= bs.sum(:runs) %></td>
+					<td><%= bs.sum(:double) %></td>
+					<td><%= bs.sum(:triple) %></td>
+					<td><%= bs.sum(:hr) %></td>
+					<td><%= bs.sum(:rbi) %></td>
+					<td><%= bs.sum(:sb) %></td>
+					<td><%= bs.sum(:cs) %></td>
+					<td><%= bs.sum(:bb) %></td>
+					<td><%= bs.sum(:ibb) %></td>
+					<td><%= bs.sum(:hb) %></td>
+					<td><%= (bs.sum(:hits)/bs.sum(:ab)).to_f %></td>
+				</tr>
+			<% end %>
+	</tbody>
+</table>

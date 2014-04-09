@@ -2,11 +2,25 @@
 <html>
 <head>
   <title>BTMA</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans|Squada+One' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<div class="logo left">
+			<%= @team.logo %>
+		</div>
+		<div class="nickname left">
+			<h1><%= @team.nickname %></h1>
+		</div>
+		<div class="team_info left">
+			<%= @team.city %>
+			<p>Est: <%= @team.created_at.year %></p>
+			<p>Team ID: <%= @team.id %></p>
+		</div>
+	</header>
 
 <%= yield %>
 
