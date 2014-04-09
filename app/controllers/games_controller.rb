@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
 
 	def index
-		@game = Game.select("created_at DESC")
+		@games = Game.order("created_at DESC")
 	end
 
 	def show

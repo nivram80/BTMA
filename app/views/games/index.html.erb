@@ -1,0 +1,4 @@
+<% @games.each do |g| %>
+	<p><%= g.opp_nickname %> - 
+	<%= g.game_datetime.strftime("%B %e, %Y - %I:%M %p") %></p>
+<% end %>
