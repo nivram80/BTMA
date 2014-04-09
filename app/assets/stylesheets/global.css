@@ -1,9 +1,85 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+.clear:after {
+    clear: both;
+}
 body {
 	font-family: 'Open Sans', sans-serif;
 }
 h1 {
 	font-family: 'Squada One', cursive;
+	color: #fff;
+	font-size: 80px;
+	text-shadow: -1px 1px #f00;
+	margin-left: 30px;
 }
 .left {
 	float: left;
+}
+.right {
+	float: right;
+}
+.banner {
+	background-color: #313131;
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.logo {
+	margin-left: 40px;
+}
+nav {
+	margin: 30px 20px 0 0;
+}
+nav a {
+	color: #313131;
+	background-color: #fff;
+	text-decoration: none;
+	padding: 3px 10px;
+	border-radius: 4px;
+	border: 1px solid #fff;
+	transition: all 1s ease;
+}
+nav a:hover {
+	color: #f00;
+	border: 1px solid #f00;
+}
+.team_info {
+	color: #fff;
+	margin: 30px 0 0 20px;
+}
+.content {
+	margin: 40px auto;
+	width: 90%;
+}
+.stats {
+	border-spacing: 0px;
+}
+.stats thead {
+	background-color: #a04040;
+	color: #fff;
+}
+.stats th {
+	padding: 3px 12px;
+}
+.players td {
+	text-align: center;
+}
+.player td a {
+	color: #a04040;
+	text-decoration: none;
+}
+.player:hover {
+	background-color: #ddd;
+}
+footer {
+	color: #313131;
 }

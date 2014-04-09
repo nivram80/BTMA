@@ -5,6 +5,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    session[:team_id] = params[:id]
     @players = Player.where(team_id: params[:id])
     @coaches = Coach.where(team_id: params[:id])
   end

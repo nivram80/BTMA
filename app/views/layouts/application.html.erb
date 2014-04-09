@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header>
+	<header class="banner clear">
 		<div class="logo left">
 			<%= @team.logo %>
 		</div>
@@ -18,11 +18,19 @@
 		<div class="team_info left">
 			<%= @team.city %>
 			<p>Est: <%= @team.created_at.year %></p>
-			<p>Team ID: <%= @team.id %></p>
 		</div>
+		<nav class="right">
+			<%= link_to "Stats", :players %>
+		</nav>
 	</header>
+	<div class="content">
 
 <%= yield %>
+
+	</div>
+	<footer>
+		<p>Team ID: <%= @team.id %></p>
+	</footer>
 
 </body>
 </html>

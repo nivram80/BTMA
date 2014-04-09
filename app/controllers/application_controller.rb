@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   before_filter :set_team
 
   def set_team
-  	team = Team.find(params[:id])
+  	@team = Team.find(session[:team_id])
   end
 end
