@@ -20,7 +20,9 @@
 			<p>Est: <%= @team.created_at.year %></p>
 		</div>
 		<nav class="right">
+			<%= link_to "Home", team_path(@team.id) %>
 			<%= link_to "Stats", :players %>
+			<%#= link_to "Logout", :login %>
 		</nav>
 	</header>
 	<div class="content">

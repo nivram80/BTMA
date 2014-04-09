@@ -17,7 +17,7 @@ h1 {
 	font-family: 'Squada One', cursive;
 	color: #fff;
 	font-size: 80px;
-	text-shadow: -1px 1px #f00;
+	text-shadow: -2px 1px #a04040;
 	margin-left: 30px;
 }
 .left {
@@ -49,8 +49,9 @@ nav a {
 	transition: all 1s ease;
 }
 nav a:hover {
-	color: #f00;
-	border: 1px solid #f00;
+	color: #fff;
+	background-color: #a04040;
+	/*border: 1px solid #a04040;*/
 }
 .team_info {
 	color: #fff;
@@ -59,6 +60,10 @@ nav a:hover {
 .content {
 	margin: 40px auto;
 	width: 90%;
+}
+.sections {
+	background-color: #fff;
+	color: #313131;
 }
 .stats {
 	border-spacing: 0px;
@@ -70,14 +75,14 @@ nav a:hover {
 .stats th {
 	padding: 3px 12px;
 }
-.players td {
+.players td, .coaches td {
 	text-align: center;
 }
-.player td a {
+.player td a, coach td a {
 	color: #a04040;
 	text-decoration: none;
 }
-.player:hover {
+.player:hover, .coach:hover {
 	background-color: #ddd;
 }
 footer {
