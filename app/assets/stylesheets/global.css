@@ -96,6 +96,12 @@ nav a:hover {
 .player:hover, .coach:hover, .games:hover {
 	background-color: #ccc;
 }
+.pitcher {
+	text-align: center;
+}
+.pitcher input[type=text] {
+	width: 25px;
+}
 footer {
 	color: #313131;
 }

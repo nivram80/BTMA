@@ -27,26 +27,26 @@
 		<% while batter_num < 10 %>
 			<tr class="player batter<%= batter_num %>">
 				<td><%= batter_num %></td>
-				<% @team_stats.each do |bs| %>
-					<% if !bs.player_id %> 
-						<td><%= link_to("Add Player", new_batter_game_stat_path(@batter_game_stat, :batter_num => batter_num), :remote => true)  %></td>
-					<% else %>
+				<% @batter_stats.each do |bs| %>
+					<% if bs.order_in_lineup == batter_num %> 
+						<td><%= bs.player_id %></td>
 						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td><%= bs.ab %></td>
+						<td><%= bs.hits %></td>
+						<td><%= bs.runs %></td>
+						<td><%= bs.double %></td>
+						<td><%= bs.triple %></td>
+						<td><%= bs.hr %></td>
+						<td><%= bs.rbi %></td>
+						<td><%= bs.hb %></td>
+						<td><%= bs.bb %></td>
+						<td><%= bs.ibb %></td>
+						<td><%= bs.so %></td>
+						<td><%= bs.sb %></td>
+						<td><%= bs.cs %></td>
 					<% end %>
-				<% batter_num += 1 %>
+				<% end %>
+			<% batter_num += 1 %>
 			</tr>
 		<% end %>
 	</tbody>
@@ -72,11 +72,7 @@
 			<th>SO</th>
 		</tr>
 	</thead>
-	<tbody class="players">
-		<tr class="player">
-		</tr>
-		<tr class="add_player">
-			<td><%= link_to("Add Pitcher", :new_pitcher_game_stat, :remote => true)  %></td>
-		</tr>
+	<tbody class="pitchers">
+		<td class="add_pitcher"><%= link_to("Add Pitcher", :new_pitcher_game_stat, :remote => true)  %></td>
 	</tbody>
 </table>

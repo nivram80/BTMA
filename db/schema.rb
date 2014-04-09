@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140408192124) do
+ActiveRecord::Schema.define(:version => 20140409210852) do
 
   create_table "batter_game_stats", :force => true do |t|
     t.integer  "game_id"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(:version => 20140408192124) do
     t.integer  "start"
     t.integer  "win"
     t.integer  "loss"
-    t.integer  "save"
+    t.integer  "sv"
     t.integer  "cg"
     t.integer  "sho"
     t.decimal  "ip"

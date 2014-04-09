@@ -10,6 +10,8 @@ class PitcherGameStatsController < ApplicationController
 
 	def new
 		@pitcher_game_stat = PitcherGameStat.new
+		@positions = Position.all
+		@players = Player.all
 
 		respond_to do |format|
       format.html

@@ -1,20 +1,21 @@
-<%= form_for @pitcher_game_stat do |f| %>
-	<td><%= f.collection_select(:player_id, @players, :id, :fullname) %></td>
-	<td><%= f.collection_select(:position_id, @positions, :id, :position) %></td>
-	<td><%= f.text_field :start %></td>
-	<td><%= f.text_field :win %></td>
-	<td><%= f.text_field :loss %></td>
-	<td><%= f.text_field :save %></td>
-	<td><%= f.text_field :cg %></td>
-	<td><%= f.text_field :sho %></td>
-	<td><%= f.text_field :ip %></td>
-	<td><%= f.text_field :hits %></td>
-	<td><%= f.text_field :runs %></td>
-	<td><%= f.text_field :er %></td>
-	<td><%= f.text_field :hr %></td>
-	<td><%= f.text_field :hb %></td>
-	<td><%= f.text_field :bb %></td>
-	<td><%= f.text_field :ibb %></td>
-	<td><%= f.text_field :so %></td>
-	<td><%= f.submit "Save" %></td>
-<% end %>
+<tr class="pitcher">
+	<%= form_for @pitcher_game_stat do |f| %>
+		<td><%= f.collection_select(:player_id, @players, :id, :fullname) %></td>
+		<td><%= f.check_box :start %></td>
+		<td><%= f.check_box :win %></td>
+		<td><%= f.check_box :loss %></td>
+		<td><%= f.check_box :save %></td>
+		<td><%= f.check_box :cg %></td>
+		<td><%= f.check_box :sho %></td>
+		<td><%= f.text_field :ip %></td>
+		<td><%= f.text_field :hits %></td>
+		<td><%= f.text_field :runs %></td>
+		<td><%= f.text_field :er %></td>
+		<td><%= f.text_field :hr %></td>
+		<td><%= f.text_field :hb %></td>
+		<td><%= f.text_field :bb %></td>
+		<td><%= f.text_field :ibb %></td>
+		<td><%= f.text_field :so %></td>
+		<td><%= f.submit "Save" %></td>
+	<% end %>
+</tr>
