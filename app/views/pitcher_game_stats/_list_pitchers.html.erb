@@ -1,0 +1,21 @@
+<% pitcher_stats.each do |ps| %>
+	<tr class="set_pitcher">
+		<td><%= ps.pitcher_num %></td>
+		<td><%= ps.player.fullname %></td>
+		<td><%= ps.start %></td>
+		<td><%= ps.win %></td>
+		<td><%= ps.loss %></td>
+		<td><%= ps.sv %></td>
+		<td><%= ps.cg %></td>
+		<td><%= ps.sho %></td>
+		<td><%= ps.ip %></td>
+		<td><%= ps.hits %></td>
+		<td><%= ps.runs %></td>
+		<td><%= ps.er %></td>
+		<td><%= ps.hr %></td>
+		<td><%= ps.hb %></td>
+		<td><%= ps.bb %></td>
+		<td><%= ps.ibb %></td>
+		<td><%= ps.so %></td>
+	</tr>
+<% end %>

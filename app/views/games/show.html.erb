@@ -32,7 +32,7 @@
 			<% else %>
 				<tr>
 					<td><%= bs.order_in_lineup %></td>
-					<td><%= bs.player_id %></td>
+					<td><%= bs.player.fullname %></td>
 					<td></td>
 					<td><%= bs.ab %></td>
 					<td><%= bs.hits %></td>
@@ -74,13 +74,12 @@
 			<th>SO</th>
 		</tr>
 	</thead>
-	<tbody class="add_pitchers">
-		<td class="add_pitcher"><%= link_to("Add Pitcher", :new_pitcher_game_stat, :remote => true)  %></td>
-	</tbody>
 	<tbody class="set_pitchers">
-		<tr class="set_pitcher">
+		
 		<% @pitcher_stats.each do |ps| %>
-			<td><%= ps.player_id %></td>
+		<tr class="set_pitcher">
+			<td><%= ps.pitcher_num %></td>
+			<td><%= ps.player.fullname %></td>
 			<td><%= ps.start %></td>
 			<td><%= ps.win %></td>
 			<td><%= ps.loss %></td>
@@ -96,7 +95,13 @@
 			<td><%= ps.bb %></td>
 			<td><%= ps.ibb %></td>
 			<td><%= ps.so %></td>
-		<% end %>
 		</tr>
+		<% end %>
+		
+	</tbody>
+	<tbody class="add_pitchers">
+		<td class="add_pitcher">
+		</td>
 	</tbody>
 </table>
+<%= link_to("Add Pitcher", :new_pitcher_game_stat, :remote => true, class: "add_pitcher_link")  %>

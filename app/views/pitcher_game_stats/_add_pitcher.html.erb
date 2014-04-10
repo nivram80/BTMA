@@ -1,6 +1,6 @@
-<tr class="pitcher">
-	<%= form_for @pitcher_game_stat do |f| %>
-		<td><%= f.text_field :pitcher_num %></td>
+<tr class="pitcher_form">
+	<%= form_for @pitcher_game_stat, :remote => true do |f| %>
+		<td><%= f.text_field :pitcher_num, :autofocus => true %></td>
 		<td><%= f.collection_select(:player_id, @players, :id, :fullname) %></td>
 		<td><%= f.check_box :start %></td>
 		<td><%= f.check_box :win %></td>
@@ -17,6 +17,7 @@
 		<td><%= f.text_field :bb %></td>
 		<td><%= f.text_field :ibb %></td>
 		<td><%= f.text_field :so %></td>
+		<%= f.hidden_field :game_id, :value => 5 %>
 		<td><%= f.submit "Save" %></td>
 	<% end %>
 </tr>

@@ -21,7 +21,8 @@ class PitcherGameStatsController < ApplicationController
 
 	def create
 		@pitcher_game_stat = PitcherGameStat.create(params[:pitcher_game_stat])
-
+		@pitcher_stats = PitcherGameStat.where(:game_id => params[:pitcher_game_stat][:game_id]).order(:pitcher_num)
+		
 		respond_to do |format|
       format.html
       format.js 
