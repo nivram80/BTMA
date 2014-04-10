@@ -27,7 +27,7 @@
 			<% if bs.is_a?(Integer) %>
 				<tr>
 					<td><%= bs + 1 %></td>
-					<td><a href="#">Insert Player</a></td>
+					<td class="add_player"><%= link_to("Add Player", :new_batter_game_stat, :remote => true)  %></td>
 				</tr>	
 			<% else %>
 				<tr>

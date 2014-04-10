@@ -18,7 +18,7 @@ class LoginsController < ApplicationController
 
 def destroy
      session[:player_id] = nil
-     redirect_to :root
+     redirect_to :login
 end
 
 end
