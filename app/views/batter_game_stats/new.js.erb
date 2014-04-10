@@ -1,2 +1,2 @@
-alert("You've made it to the new.js.erb file.");
-$(".batter<%= @batter_num %>").html("<%= j render 'lineup' %>");
+$(".add_batters").append("<%= j render 'add_batter' %>");
+$(".add_batter_link").hide();

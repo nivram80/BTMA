@@ -80,26 +80,26 @@ nav a:hover {
 .stats th {
 	padding: 3px 12px;
 }
-.players tr:nth-child(odd), .coaches tr:nth-child(odd), .set_pitchers tr:nth-child(odd) {
+.players tr:nth-child(odd), .coaches tr:nth-child(odd), .set_pitchers tr:nth-child(odd), .added_batters tr:nth-child(odd) {
 	background-color: #eee;
 }
-.players tr:nth-child(odd):hover, .coaches tr:nth-child(odd):hover, .set_pitchers tr:nth-child(odd):hover {
+.players tr:nth-child(odd):hover, .coaches tr:nth-child(odd):hover, .set_pitchers tr:nth-child(odd):hover, .added_batters tr:nth-child(odd):hover {
 	background-color: #ccc;
 }
-.players td, .coaches td, .games td, .set_pitcher td {
+.players td, .coaches td, .games td, .set_pitcher td, .added_batters td {
 	text-align: center;
 }
-.player td a, .coach td a, .games td a, .add_player td a {
+.player td a, .coach td a, .games td a, .add_player td a, .added_batter td a {
 	color: #a04040;
 	text-decoration: none;
 }
-.player:hover, .coach:hover, .games:hover, .set_pitchers:hover {
+.player:hover, .coach:hover, .games:hover, .set_pitchers:hover, .added_batter:hover {
 	background-color: #ccc;
 }
-.pitcher_form {
+.pitcher_form, .batter_form {
 	text-align: center;
 }
-.pitcher_form input[type=text] {
+.pitcher_form input[type=text], .batter_form input[type=text] {
 	width: 25px;
 }
 footer {

@@ -10,7 +10,8 @@ class BatterGameStatsController < ApplicationController
 
 	def new
 		@batter_game_stat = BatterGameStat.new
-		@batter_num = params[:batter_num]
+		@positions = Position.all
+		@players = Player.all
 
 		respond_to do |format|
       format.html
@@ -20,7 +21,7 @@ class BatterGameStatsController < ApplicationController
 
 	def create
 		@batter_game_stat = BatterGameStat.create(params[:batter_game_stat])
-
+		@batter_stats = BatterGameStat.where(:game_id => params[:batter_game_stat][:game_id]).order(:order_in_lineup)
 		respond_to do |format|
       format.html
       format.js 

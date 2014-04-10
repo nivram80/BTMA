@@ -1,0 +1,20 @@
+<% batter_stats.each do |bs| %>
+	<tr class="set_batter">
+		<td><%= bs.order_in_lineup %></td>
+		<td><%= bs.player.fullname %></td>
+		<td></td>
+		<td><%= bs.ab %></td>
+		<td><%= bs.hits %></td>
+		<td><%= bs.runs %></td>
+		<td><%= bs.double %></td>
+		<td><%= bs.triple %></td>
+		<td><%= bs.hr %></td>
+		<td><%= bs.rbi %></td>
+		<td><%= bs.hb %></td>
+		<td><%= bs.bb %></td>
+		<td><%= bs.ibb %></td>
+		<td><%= bs.so %></td>
+		<td><%= bs.sb %></td>
+		<td><%= bs.cs %></td>
+	</tr>
+<% end %>
