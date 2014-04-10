@@ -1,10 +1,11 @@
 <tr class="pitcher">
 	<%= form_for @pitcher_game_stat do |f| %>
+		<td><%= f.text_field :pitcher_num %></td>
 		<td><%= f.collection_select(:player_id, @players, :id, :fullname) %></td>
 		<td><%= f.check_box :start %></td>
 		<td><%= f.check_box :win %></td>
 		<td><%= f.check_box :loss %></td>
-		<td><%= f.check_box :save %></td>
+		<td><%= f.check_box :sv %></td>
 		<td><%= f.check_box :cg %></td>
 		<td><%= f.check_box :sho %></td>
 		<td><%= f.text_field :ip %></td>

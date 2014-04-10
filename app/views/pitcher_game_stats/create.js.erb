@@ -1,0 +1,20 @@
+//$(".set_pitcher").append("<%= j render 'list_pitcher' %>")
+$(".set_pitchers").append('<% @pitcher_stats.each do |ps| %>
+														<td><%= ps.player_id %></td>
+														<td><%= ps.start %></td>
+														<td><%= ps.win %></td>
+														<td><%= ps.loss %></td>
+														<td><%= ps.sv %></td>
+														<td><%= ps.cg %></td>
+														<td><%= ps.sho %></td>
+														<td><%= ps.ip %></td>
+														<td><%= ps.hits %></td>
+														<td><%= ps.runs %></td>
+														<td><%= ps.er %></td>
+														<td><%= ps.hr %></td>
+														<td><%= ps.hb %></td>
+														<td><%= ps.bb %></td>
+														<td><%= ps.ibb %></td>
+														<td><%= ps.so %></td>
+													<% end %>');
+$(".add_pitcher").remove();

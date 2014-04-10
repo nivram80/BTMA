@@ -23,37 +23,39 @@
 		</tr>
 	</thead>
 	<tbody class="players">
-		<% batter_num = 1 %>
-		<% while batter_num < 10 %>
-			<tr class="player batter<%= batter_num %>">
-				<td><%= batter_num %></td>
-				<% @batter_stats.each do |bs| %>
-					<% if bs.order_in_lineup == batter_num %> 
-						<td><%= bs.player_id %></td>
-						<td></td>
-						<td><%= bs.ab %></td>
-						<td><%= bs.hits %></td>
-						<td><%= bs.runs %></td>
-						<td><%= bs.double %></td>
-						<td><%= bs.triple %></td>
-						<td><%= bs.hr %></td>
-						<td><%= bs.rbi %></td>
-						<td><%= bs.hb %></td>
-						<td><%= bs.bb %></td>
-						<td><%= bs.ibb %></td>
-						<td><%= bs.so %></td>
-						<td><%= bs.sb %></td>
-						<td><%= bs.cs %></td>
-					<% end %>
-				<% end %>
-			<% batter_num += 1 %>
-			</tr>
+		<% @lineup.each do |bs|%>
+			<% if bs.is_a?(Integer) %>
+				<tr>
+					<td><%= bs + 1 %></td>
+					<td><a href="#">Insert Player</a></td>
+				</tr>	
+			<% else %>
+				<tr>
+					<td><%= bs.order_in_lineup %></td>
+					<td><%= bs.player_id %></td>
+					<td></td>
+					<td><%= bs.ab %></td>
+					<td><%= bs.hits %></td>
+					<td><%= bs.runs %></td>
+					<td><%= bs.double %></td>
+					<td><%= bs.triple %></td>
+					<td><%= bs.hr %></td>
+					<td><%= bs.rbi %></td>
+					<td><%= bs.hb %></td>
+					<td><%= bs.bb %></td>
+					<td><%= bs.ibb %></td>
+					<td><%= bs.so %></td>
+					<td><%= bs.sb %></td>
+					<td><%= bs.cs %></td>
+				</tr>
+			<% end %>
 		<% end %>
 	</tbody>
 </table>
 <table class="stats">
 	<thead>
 		<tr>
+			<th>#</th>
 			<th>Pitcher(s)</th>
 			<th>Start</th>
 			<th>Win</th>
@@ -72,7 +74,29 @@
 			<th>SO</th>
 		</tr>
 	</thead>
-	<tbody class="pitchers">
+	<tbody class="add_pitchers">
 		<td class="add_pitcher"><%= link_to("Add Pitcher", :new_pitcher_game_stat, :remote => true)  %></td>
+	</tbody>
+	<tbody class="set_pitchers">
+		<tr class="set_pitcher">
+		<% @pitcher_stats.each do |ps| %>
+			<td><%= ps.player_id %></td>
+			<td><%= ps.start %></td>
+			<td><%= ps.win %></td>
+			<td><%= ps.loss %></td>
+			<td><%= ps.sv %></td>
+			<td><%= ps.cg %></td>
+			<td><%= ps.sho %></td>
+			<td><%= ps.ip %></td>
+			<td><%= ps.hits %></td>
+			<td><%= ps.runs %></td>
+			<td><%= ps.er %></td>
+			<td><%= ps.hr %></td>
+			<td><%= ps.hb %></td>
+			<td><%= ps.bb %></td>
+			<td><%= ps.ibb %></td>
+			<td><%= ps.so %></td>
+		<% end %>
+		</tr>
 	</tbody>
 </table>
