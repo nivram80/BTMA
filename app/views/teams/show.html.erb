@@ -1,4 +1,4 @@
-<table class="stats">
+<table class="stats left">
 	<thead>
 		<tr class="sections">
 			<th colspan="3" style="text-align: left;">Roster</th>
@@ -23,19 +23,24 @@
 			<% @players.each do |p| %>
 				<tr class="player">
 					<% bs = BatterGameStat.where(:player_id => p.id) %>
-					<td><%= link_to(p.fullname, player_path(p.id)) %></td>
-					<td><%#= bs.position_id %></td>
-					<td><%= p.bats %>/<%= p.throws %></td>
-					<td><%= number_with_precision(((bs.sum(:hits).to_d/bs.sum(:ab).to_d).to_d), :precision => 3) %></td>
-					<td><%= bs.sum(:hr) %></td>
-					<td><%= bs.sum(:rbi) %></td>
-					<td><%= bs.sum(:sb) %></td>
+						<td><%= link_to(p.fullname, player_path(p.id)) %></td>
+						<td><%#= bs.position.position %></td>
+						<td><%= p.bats %>/<%= p.throws %></td>
+						<td><%= number_with_precision(((bs.sum(:hits).to_d/bs.sum(:ab).to_d).to_d), :precision => 3).to_s.sub("0", "") %></td>
+						<td><%= bs.sum(:hr) %></td>
+						<td><%= bs.sum(:rbi) %></td>
+						<td><%= bs.sum(:sb) %></td>
+					<% ps = PitcherGameStat.where(:player_id => p.id) %>
+						<td><%= number_with_precision((((ps.sum(:er).to_d / ps.sum(:ip).to_d) * 9).to_d), :precision => 2) %></td>
+						<td><%= ps.sum(:so) %></td>
+						<td><%= ps.sum(:win) %></td>
+						<td><%= ps.sum(:loss) %></td>
 				</tr>
 			<% end %>
 	</tbody>
 </table>
 
-<table class="stats">
+<table class="stats left">
 	<thead>
 		<tr class="sections">
 			<th>Coaches</th>
@@ -43,8 +48,8 @@
 		<tr>
 			<th>Coach</th>
 			<th>Manager</th>
-			<th>First Base</th>
-			<th>Third Base<%=  %></th>
+			<th>1B</th>
+			<th>3B</th>
 		</tr>
 	</thead>
 	<tbody class="coaches">

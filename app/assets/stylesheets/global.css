@@ -70,7 +70,7 @@ nav a:hover {
 }
 .stats {
 	border-spacing: 0px;
-	margin-top: 20px;
+	margin: 20px 60px 0 0;
 }
 .stats thead {
 	background-color: #a04040;
@@ -93,7 +93,7 @@ nav a:hover {
 	color: #a04040;
 	text-decoration: none;
 }
-.player:hover, .coach:hover, .games:hover, .set_pitchers:hover, .added_batter:hover {
+.player:hover, .coach:hover, .game:hover, .set_pitchers:hover, .added_batter:hover {
 	background-color: #ccc;
 }
 .pitcher_form, .batter_form {
@@ -104,4 +104,7 @@ nav a:hover {
 }
 footer {
 	color: #313131;
+	height: 100px;
+	background-color: #313131;
+	margin: 50px 0 0 0;
 }
