@@ -8,32 +8,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header class="banner clear">
-		<div class="logo left">
-			<%= @team.logo %>
-		</div>
-		<div class="nickname left">
-			<h1><%= @team.nickname %></h1>
-		</div>
-		<div class="team_info left">
-			<%= @team.city %>
-			<p>Est: <%= @team.created_at.year %></p>
-		</div>
-		<nav class="right">
-			<%= link_to "Home", team_path(@team.id) %>
-			<%= link_to "Stats", :players %>
-			<%= link_to "Games", :games %>
-			<%#= link_to "Logout", :login %>
-		</nav>
-	</header>
-	<div class="content">
+	<% if current_coach %>
+		<header class="banner clear">
+			<div class="logo left">
+				<%= current_team.logo %>
+			</div>
+			<div class="nickname left">
+				<h1><%= current_team.nickname %></h1>
+			</div>
+			<div class="team_info left">
+				<%= current_team.city %>
+				<p>Est: <%= current_team.created_at.year %> - Team ID: <%= current_team.id %></p>
+			</div>
+			<nav class="right">
+				<%= link_to "Home", team_path(current_team.id) %>
+				<%= link_to "Stats", :players %>
+				<%= link_to "Games", :games %>
+				<%#= link_to "Logout", :login, :method => "delete" %>
+			</nav>
+		</header>
+	<% end %>
+		<div class="content">
 
-<%= yield %>
+			<%= yield %>
 
-	</div>
-	<footer>
-		<p>Team ID: <%= @team.id %></p>
-	</footer>
-
+		</div>
+		<footer>
+			
+		</footer>
+	
 </body>
 </html>
