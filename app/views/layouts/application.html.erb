@@ -24,7 +24,7 @@
 				<%= link_to "Home", team_path(current_team.id) %>
 				<%= link_to "Stats", :players %>
 				<%= link_to "Games", :games %>
-				<%= link_to "Logout", :login, :method => "delete" %>
+				<%= link_to "Logout", login_path(current_coach.id), :method => :delete %>
 			</nav>
 		</header>
 		<% end %>

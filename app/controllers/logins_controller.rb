@@ -23,9 +23,9 @@ class LoginsController < ApplicationController
 	end
 
 	def destroy
-    session[:coach] = nil
-    session[:team] = nil
-
+    session[:coach_id] = nil
+    session[:team_id] = nil
+    binding.pry
     redirect_to :new_login
 	end
 
