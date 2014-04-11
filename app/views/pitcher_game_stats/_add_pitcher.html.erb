@@ -17,7 +17,10 @@
 		<td><%= f.text_field :bb %></td>
 		<td><%= f.text_field :ibb %></td>
 		<td><%= f.text_field :so %></td>
-		<%= f.hidden_field :game_id, :value => 5 %>
+		<%#= fields_for :game do |g| %>
+			<%# binding.pry %>
+  		<%= f.hidden_field :game_id, :value => 5 %>
+		<%# end %>
 		<td><%= f.submit "Save" %></td>
 	<% end %>
 </tr>

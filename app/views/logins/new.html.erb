@@ -1,13 +1,21 @@
-<%= form_tag logins_path do %>
-	<p>
-	  <%= label_tag :email %>
-	  <%= text_field_tag :email %>
-	</p>
-	<p>
-	  <%= label_tag :password %>
-	  <%= password_field_tag :password %>
-	</p> 
-	<%= submit_tag "Log In" %>
-<% end %>
+<div class="btma_logo">
+	<h1>BTMA</h1>
+	<p>Baseball Team Management App</p>
+</div>
 
-<p>No account yet? <%= link_to "Sign Up", :new_coach %></p>
+<div class="login_container clear">
+	<%= form_tag logins_path, :class => "login" do %>
+		<p class="email">
+		  <%= label_tag "Email: " %>
+		  <%= text_field_tag :email %>
+		</p>
+		<p class="password clear">
+		  <%= label_tag "Password: " %>
+		  <%= password_field_tag :password %>
+		</p> 
+		<p class="submit">
+			<%= submit_tag "Log In" %>
+		</p>
+	<% end %>
+</div>
+<p class="center">No account yet? &nbsp;&nbsp;<%= link_to "Sign Up", :new_coach %></p>

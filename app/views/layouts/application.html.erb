@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>BTMA</title>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans|Squada+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans|Squada+One|Bangers' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="<%= params[:controller] %>">
 	<% if current_coach %>
 		<header class="banner clear">
 			<div class="logo left">
@@ -18,24 +18,28 @@
 			</div>
 			<div class="team_info left">
 				<%= current_team.city %>
-				<p>Est: <%= current_team.created_at.year %> - Team ID: <%= current_team.id %></p>
+				<p>Est: <%= current_team.created_at.year %></p>
 			</div>
 			<nav class="right">
 				<%= link_to "Home", team_path(current_team.id) %>
 				<%= link_to "Stats", :players %>
 				<%= link_to "Games", :games %>
-				<%#= link_to "Logout", :login, :method => "delete" %>
+				<%= link_to "Logout", :login, :method => "delete" %>
 			</nav>
 		</header>
-	<% end %>
+		<% end %>
+	
 		<div class="content clear">
 
 			<%= yield %>
 
 		</div>
+
+		<% if current_coach %>
 		<footer>
-			
+			<p>Team ID: <%= current_team.id %></p>
+			<p>Copyright &copy; <%= Time.now.year %> BTMA</p>
 		</footer>
-	
+	<% end %>
 </body>
 </html>

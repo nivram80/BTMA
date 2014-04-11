@@ -1,7 +1,9 @@
 <h2>Game vs. <%= @game.opp_nickname %></h2>
 <p><%= @game.game_datetime.strftime("%B %e, %Y - %I:%M %p") %></p>
+<%= @pitcher_stats.sum(:win) == 1 ? 'WIN' : 'LOSS' %>: <%= @batter_stats.sum(:runs) %> - <%= @pitcher_stats.sum(:runs) %></p>
 
 <table class="stats">
+
 	<thead>
 		<tr>
 			<th>#</th>
@@ -22,6 +24,7 @@
 			<th>CS</th>
 		</tr>
 	</thead>
+
 	<tbody class="added_batters">	
 		<% @batter_stats.each do |bs| %>
 		<tr class="added_batter">
@@ -44,15 +47,18 @@
 		</tr>
 		<% end %>
 	</tbody>
+
 	<tbody class="add_batters">
 		<td class="add_batter">
 		</td>
 	</tbody>
+
 </table>
 	<%= link_to("Add Batter", :new_batter_game_stat, :remote => true, class: "add_batter_link")  %>
 	
 </table>
 <table class="stats">
+
 	<thead>
 		<tr>
 			<th>#</th>
@@ -74,8 +80,8 @@
 			<th>SO</th>
 		</tr>
 	</thead>
+
 	<tbody class="set_pitchers">
-		
 		<% @pitcher_stats.each do |ps| %>
 		<tr class="set_pitcher">
 			<td><%= ps.pitcher_num %></td>
@@ -97,11 +103,12 @@
 			<td><%= ps.so %></td>
 		</tr>
 		<% end %>
-		
 	</tbody>
+
 	<tbody class="add_pitchers">
 		<td class="add_pitcher">
 		</td>
 	</tbody>
+
 </table>
 <%= link_to("Add Pitcher", :new_pitcher_game_stat, :remote => true, class: "add_pitcher_link")  %>

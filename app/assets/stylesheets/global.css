@@ -17,7 +17,7 @@ h1 {
 	font-family: 'Squada One', cursive;
 	color: #fff;
 	font-size: 80px;
-	text-shadow: -2px 1px #a04040;
+	text-shadow: -5px 1px #a04040;
 	margin-left: 30px;
 }
 h2 {
@@ -28,6 +28,9 @@ h2 {
 }
 .right {
 	float: right;
+}
+.center {
+	text-align: center;
 }
 .banner {
 	background-color: #313131;
@@ -56,6 +59,13 @@ nav a:hover {
 	background-color: #a04040;
 	/*border: 1px solid #a04040;*/
 }
+.win {
+	color: #0f0;
+	font-weight: bold;
+}
+.loss {
+	color: #f00;
+}
 .team_info {
 	color: #fff;
 	margin: 30px 0 0 20px;
@@ -80,10 +90,10 @@ nav a:hover {
 .stats th {
 	padding: 3px 12px;
 }
-.players tr:nth-child(odd), .coaches tr:nth-child(odd), .set_pitchers tr:nth-child(odd), .added_batters tr:nth-child(odd) {
+.players tr:nth-child(odd), .coaches tr:nth-child(odd), .set_pitchers tr:nth-child(odd), .added_batters tr:nth-child(odd),.games tr:nth-child(odd) {
 	background-color: #eee;
 }
-.players tr:nth-child(odd):hover, .coaches tr:nth-child(odd):hover, .set_pitchers tr:nth-child(odd):hover, .added_batters tr:nth-child(odd):hover {
+.players tr:nth-child(odd):hover, .coaches tr:nth-child(odd):hover, .set_pitchers tr:nth-child(odd):hover, .added_batters tr:nth-child(odd):hover, .games tr:nth-child(odd):hover {
 	background-color: #ccc;
 }
 .players td, .coaches td, .games td, .set_pitcher td, .added_batters td {
@@ -103,8 +113,9 @@ nav a:hover {
 	width: 25px;
 }
 footer {
-	color: #313131;
-	height: 100px;
+	color: #fff;
+	padding: 10px 0;
 	background-color: #313131;
 	margin: 50px 0 0 0;
+	text-align: center;
 }

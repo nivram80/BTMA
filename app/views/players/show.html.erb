@@ -4,3 +4,43 @@
 	<p>Throws: <%= @player.throws %></p>
 	<p>Bats: <%= @player.bats %></p>
 </div>
+<table class="stats">
+	<thead>
+		<tr>
+			<!--<th>Year</th>-->
+			<th>AB</th>
+			<th>Hits</th>
+			<th>Runs</th>
+			<th>2B</th>
+			<th>3B</th>
+			<th>HR</th>
+			<th>RBI</th>
+			<th>SB</th>
+			<th>CS</th>
+			<th>BB</th>
+			<th>IBB</th>
+			<th>HB</th>
+			<th>AVG</th>
+			<th>OBP</th>
+		</tr>
+	</thead>
+	<tbody class="players">
+		<tr class="player">
+			<!--<td><%#= @batter_stats %></td>-->
+			<td><%= @batter_stats.sum(:ab) %></td>
+			<td><%= @batter_stats.sum(:hits) %></td>
+			<td><%= @batter_stats.sum(:runs) %></td>
+			<td><%= @batter_stats.sum(:double) %></td>
+			<td><%= @batter_stats.sum(:triple) %></td>
+			<td><%= @batter_stats.sum(:hr) %></td>
+			<td><%= @batter_stats.sum(:rbi) %></td>
+			<td><%= @batter_stats.sum(:sb) %></td>
+			<td><%= @batter_stats.sum(:cs) %></td>
+			<td><%= @batter_stats.sum(:bb) %></td>
+			<td><%= @batter_stats.sum(:ibb) %></td>
+			<td><%= @batter_stats.sum(:hb) %></td>
+			<td><%= number_with_precision(((@batter_stats.sum(:hits).to_d/@batter_stats.sum(:ab).to_d).to_d), :precision => 3).to_s.sub("0", "") %></td>
+			<td><%= number_with_precision((((@batter_stats.sum(:hits) + @batter_stats.sum(:bb)).to_d / @batter_stats.sum(:ab).to_d).to_d), :precision => 3).to_s.sub("0", "") %></td>
+		</tr>
+	</tbody>
+</table>
