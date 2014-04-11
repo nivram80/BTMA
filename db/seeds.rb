@@ -1,14 +1,43 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Weather.create({:conditions => "Fair"})
+Weather.create({:conditions => "Windy"})
+Weather.create({:conditions => "Rain"})
+Weather.create({:conditions => "Snow"})
+Weather.create({:conditions => "Deathly Cold"})
+Weather.create({:conditions => "Freeking Hot"})
 
+Game.create({:home_team => false, :ballpark => "The Sandlot", :city => "Council Bluffs", :game_datetime => "2014-04-09 19:00:00", :fahr_temp => 78, :weather_id => 1, :opp_nickname => "Bluffs", :opp_city => "Council Bluffs"})
+
+
+Player.create({:team_id => 1, :fname => "Joe", :lname => "Smith", :dob => "1990-04-07", :email => "joe@gmail.com", :phone => "4025551234", :password => "1234", :password_confirmation => "1234", :throws => "Right", :bats => "Right" })
+Player.create({:team_id => 1, :fname => "Chris", :lname => "Baker", :dob => "1990-04-07", :email => "chris@gmail.com", :phone => "4025551234", :password => "1234", :password_confirmation => "1234", :throws => "Left", :bats => "Right" })
+Player.create({:team_id => 1, :fname => "Layne", :lname => "Staley", :dob => "1990-04-07", :email => "layne@gmail.com", :phone => "4025551234", :password => "1234", :password_confirmation => "1234", :throws => "Left", :bats => "Left" })
+Player.create({:team_id => 1, :fname => "Ralph", :lname => "Swanson", :dob => "1990-04-07", :email => "ralph@gmail.com", :phone => "4025551234", :password => "1234", :password_confirmation => "1234", :throws => "Left", :bats => "Right" })
+Player.create({:team_id => 1, :fname => "Peter", :lname => "Griffin", :dob => "1990-04-07", :email => "peter@gmail.com", :phone => "4025551234", :password => "1234", :password_confirmation => "1234", :throws => "Right", :bats => "Right" })
+Player.create({:team_id => 1, :fname => "Harry", :lname => "Jones", :dob => "1990-04-07", :email => "harry@gmail.com", :phone => "4025551234", :password => "1234", :password_confirmation => "1234", :throws => "Right", :bats => "Right" })
+Player.create({:team_id => 1, :fname => "Alex", :lname => "Ramirez", :dob => "1990-04-07", :email => "alex@gmail.com", :phone => "4025551234", :password => "1234", :password_confirmation => "1234", :throws => "Right", :bats => "Right" })
+Player.create({:team_id => 1, :fname => "Mick", :lname => "Stewart", :dob => "1990-04-07", :email => "mick@gmail.com", :phone => "4025551234", :password => "1234", :password_confirmation => "1234", :throws => "Left", :bats => "Switch" })
+Player.create({:team_id => 1, :fname => "Ace", :lname => "Chen", :dob => "1990-04-07", :email => "ace@gmail.com", :phone => "4025551234", :password => "1234", :password_confirmation => "1234", :throws => "Left", :bats => "Right" })
+Player.create({:team_id => 1, :fname => "Butch", :lname => "Nichols", :dob => "1990-04-07", :email => "butch@gmail.com", :phone => "4025551234", :password => "1234", :password_confirmation => "1234", :throws => "Right", :bats => "Left" })
+Player.create({:team_id => 1, :fname => "Dallas", :lname => "Hightower", :dob => "1990-04-07", :email => "dallas@gmail.com", :phone => "4025551234", :password => "1234", :password_confirmation => "1234", :throws => "Right", :bats => "Right" })
+
+Position.create({:position => "1B"})
+Position.create({:position => "2B"})
+Position.create({:position => "3B"})
+Position.create({:position => "SS"})
+Position.create({:position => "C"})
+Position.create({:position => "RF"})
+Position.create({:position => "CF"})
+Position.create({:position => "LF"})
+Position.create({:position => "DH"})
+Position.create({:position => "SP"})
+Position.create({:position => "RP"})
+
+BatterGameStat.create({:game_id => 1, :player_id => 1, :position_id => 1, :order_in_lineup => 1, :ab => 5, :hits => 3, :runs => 3, :double => 0, :triple => 1, :hr => 0, :rbi => 2, :hb => 0, :bb => 0, :ibb => 0, :so => 0, :sb => 2, :cs => 0})
+BatterGameStat.create({:game_id => 1, :player_id => 2, :position_id => 2, :order_in_lineup => 2, :ab => 5, :hits => 3, :runs => 3, :double => 0, :triple => 1, :hr => 0, :rbi => 2, :hb => 0, :bb => 0, :ibb => 0, :so => 0, :sb => 2, :cs => 0})
 BatterGameStat.create({:game_id => 1, :player_id => 3, :position_id => 3, :order_in_lineup => 3, :ab => 5, :hits => 4, :runs => 3, :double => 2, :triple => 0, :hr => 0, :rbi => 3, :hb => 0, :bb => 0, :ibb => 0, :so => 3, :sb => 0, :cs => 0})
 BatterGameStat.create({:game_id => 1, :player_id => 4, :position_id => 4, :order_in_lineup => 4, :ab => 4, :hits => 0, :runs => 0, :double => 0, :triple => 0, :hr => 0, :rbi => 0, :hb => 0, :bb => 1, :ibb => 0, :so => 2, :sb => 0, :cs => 0})
 BatterGameStat.create({:game_id => 1, :player_id => 5, :position_id => 5, :order_in_lineup => 5, :ab => 4, :hits => 1, :runs => 1, :double => 0, :triple => 1, :hr => 0, :rbi => 1, :hb => 0, :bb => 0, :ibb => 0, :so => 3, :sb => 0, :cs => 0})
 BatterGameStat.create({:game_id => 1, :player_id => 6, :position_id => 6, :order_in_lineup => 6, :ab => 3, :hits => 1, :runs => 2, :double => 1, :triple => 0, :hr => 0, :rbi => 1, :hb => 0, :bb => 1, :ibb => 0, :so => 1, :sb => 0, :cs => 0})
 BatterGameStat.create({:game_id => 1, :player_id => 7, :position_id => 7, :order_in_lineup => 7, :ab => 4, :hits => 1, :runs => 0, :double => 0, :triple => 0, :hr => 0, :rbi => 0, :hb => 0, :bb => 0, :ibb => 0, :so => 2, :sb => 1, :cs => 0})
 BatterGameStat.create({:game_id => 1, :player_id => 8, :position_id => 8, :order_in_lineup => 8, :ab => 4, :hits => 3, :runs => 3, :double => 1, :triple => 0, :hr => 0, :rbi => 2, :hb => 0, :bb => 0, :ibb => 0, :so => 0, :sb => 2, :cs => 0})
+
