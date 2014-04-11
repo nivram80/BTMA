@@ -27,7 +27,7 @@
 
 	<tbody class="added_batters">	
 		<% @batter_stats.each do |bs| %>
-		<tr class="added_batter">
+		<tr class="added_batter" id="b<%= bs.order_in_lineup %>">
 			<td><%= bs.order_in_lineup %></td>
 			<td><%= bs.player.fullname %></td>
 			<td><%= bs.position.position %></td>
@@ -44,6 +44,7 @@
 			<td><%= bs.so %></td>
 			<td><%= bs.sb %></td>
 			<td><%= bs.cs %></td>
+			<td><%= link_to "Edit", batter_game_stat_path(bs.id), :remote => true, :class => "edit" %></td>
 		</tr>
 		<% end %>
 	</tbody>

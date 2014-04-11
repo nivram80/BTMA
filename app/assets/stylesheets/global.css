@@ -125,6 +125,10 @@ nav a:hover {
 .pitcher_form input[type=text], .batter_form input[type=text] {
 	width: 25px;
 }
+.edit {
+	background-color: #fff;
+	padding-left: 10px;
+}
 footer {
 	color: #fff;
 	padding: 10px 0;

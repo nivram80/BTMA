@@ -22,6 +22,7 @@ class BatterGameStatsController < ApplicationController
 	def create
 		@batter_game_stat = BatterGameStat.create(params[:batter_game_stat])
 		@batter_stats = BatterGameStat.where(:game_id => params[:batter_game_stat][:game_id]).order(:order_in_lineup)
+		
 		respond_to do |format|
       format.html
       format.js 
@@ -30,11 +31,21 @@ class BatterGameStatsController < ApplicationController
 
 	def edit
 		@batter_game_stat = BatterGameStat.find(params[:id])
+
+		respond_to do |format|
+      format.html
+      format.js 
+    end
 	end
 
 	def update
 		@batter_game_stat = BatterGameStat.find(params[:id])
 		@batter_game_stat.update_attributes(params[:batter_game_stat])
+
+		respond_to do |format|
+      format.html
+      format.js 
+    end
 	end
 
 	def destroy
