@@ -1,6 +1,6 @@
 Btma::Application.routes.draw do
 
-  root :to => 'teams#show/:id'
+  root :to => 'logins#new'
   resources :logins
   resources :teams
   resources :players
