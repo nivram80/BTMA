@@ -12,6 +12,8 @@ class PitcherGameStatsController < ApplicationController
 		@pitcher_game_stat = PitcherGameStat.new
 		@positions = Position.all
 		@players = Player.all
+		# binding.pry
+		# @game = Game.find(params[:id])
 
 		respond_to do |format|
       format.html

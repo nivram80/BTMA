@@ -104,20 +104,37 @@ nav a:hover {
 .stats th {
 	padding: 3px 12px;
 }
-.players tr:nth-child(odd), .coaches tr:nth-child(odd), .set_pitchers tr:nth-child(odd), .added_batters tr:nth-child(odd),.games tr:nth-child(odd) {
+.add_stats {
+	border-spacing: 0px;
+	margin: 20px 60px 0 0;
+	padding: 5px 10px 15px 10px;
+	width: 101%;
+	border: 1px solid #313131;
+	border-radius: 4px;
 	background-color: #eee;
 }
-.players tr:nth-child(odd):hover, .coaches tr:nth-child(odd):hover, .set_pitchers tr:nth-child(odd):hover, .added_batters tr:nth-child(odd):hover, .games tr:nth-child(odd):hover {
+.add_stats thead {
+	background-color: #eee;
+	color: #313131;
+	border-radius: 4px;
+}
+.add_stats th {
+	padding: 3px 12px;
+}
+.players tr:nth-child(odd), .coaches tr:nth-child(odd), .added_pitchers tr:nth-child(odd), .added_batters tr:nth-child(odd),.games tr:nth-child(odd) {
+	background-color: #eee;
+}
+.players tr:nth-child(odd):hover, .coaches tr:nth-child(odd):hover, .added_pitchers tr:nth-child(odd):hover, .added_batters tr:nth-child(odd):hover, .games tr:nth-child(odd):hover {
 	background-color: #ccc;
 }
-.players td, .coaches td, .games td, .set_pitcher td, .added_batters td {
+.players td, .coaches td, .games td, .added_pitcher td, .added_batters td {
 	text-align: center;
 }
 .player td a, .coach td a, .games td a, .add_player td a, .added_batter td a {
 	color: #a04040;
 	text-decoration: none;
 }
-.player:hover, .coach:hover, .game:hover, .set_pitchers:hover, .added_batter:hover {
+.player:hover, .coach:hover, .game:hover, .added_pitcher:hover, .added_batter:hover {
 	background-color: #ccc;
 }
 .pitcher_form, .batter_form {

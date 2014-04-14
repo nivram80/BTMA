@@ -79,12 +79,13 @@
 			<th>BB</th>
 			<th>IBB</th>
 			<th>SO</th>
+			<th>&nbsp;</th>
 		</tr>
 	</thead>
 
-	<tbody class="set_pitchers">
+	<tbody class="added_pitchers">
 		<% @pitcher_stats.each do |ps| %>
-		<tr class="set_pitcher">
+		<tr class="added_pitcher">
 			<td><%= ps.pitcher_num %></td>
 			<td><%= ps.player.fullname %></td>
 			<td><%= ps.start %></td>
@@ -106,10 +107,60 @@
 		<% end %>
 	</tbody>
 
-	<tbody class="add_pitchers">
-		<td class="add_pitcher">
-		</td>
-	</tbody>
-
 </table>
+
+<%= form_for @pitcher_game_stat, :remote => true, :class => "add_pitcher" do |f| %>
+	<table class="add_stats">
+
+		<thead>
+			<tr>
+				<th>#</th>
+				<th> Add a Pitcher </th>
+				<th>Start</th>
+				<th>Win</th>
+				<th>Loss</th>
+				<th>Save</th>
+				<th>CG</th>
+				<th>SHO</th>
+				<th>IP</th>
+				<th>Hits</th>
+				<th>Runs</th>
+				<th>ER</th>
+				<th>HR</th>
+				<th>HB</th>
+				<th>BB</th>
+				<th>IBB</th>
+				<th>SO</th>
+				<th>&nbsp;</th>
+			</tr>
+	</thead>
+
+		<tbody>
+			<tr class="pitcher_form">
+				<%= f.hidden_field :game_id, :value => @game.id %>
+				<td><%= f.text_field :pitcher_num, :autofocus => true %></td>
+				<td><%= f.collection_select(:player_id, @players, :id, :fullname) %></td>
+				<td><%= f.check_box :start %></td>
+				<td><%= f.check_box :win %></td>
+				<td><%= f.check_box :loss %></td>
+				<td><%= f.check_box :sv %></td>
+				<td><%= f.check_box :cg %></td>
+				<td><%= f.check_box :sho %></td>
+				<td><%= f.text_field :ip %></td>
+				<td><%= f.text_field :hits %></td>
+				<td><%= f.text_field :runs %></td>
+				<td><%= f.text_field :er %></td>
+				<td><%= f.text_field :hr %></td>
+				<td><%= f.text_field :hb %></td>
+				<td><%= f.text_field :bb %></td>
+				<td><%= f.text_field :ibb %></td>
+				<td><%= f.text_field :so %></td>
+				<td><%= f.submit "Save" %></td>
+			</tr>
+		</tbody>
+
+	</table>
+<% end %>
+
+
 <%= link_to("Add Pitcher", :new_pitcher_game_stat, :remote => true, class: "add_pitcher_link content_button")  %>

@@ -1,4 +1,5 @@
 <tr class="batter_form">
+
 	<%= form_for @batter_game_stat, :remote => true do |f| %>
 		<td><%= f.text_field :order_in_lineup, :autofocus => true %></td>
 		<td><%= f.collection_select(:player_id, @players, :id, :fullname) %></td>
@@ -19,4 +20,5 @@
 		<%= f.hidden_field :game_id, :value => 1 %>
 		<td><%= f.submit "Save" %></td>
 	<% end %>
+	
 </tr>

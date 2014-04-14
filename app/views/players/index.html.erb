@@ -1,5 +1,6 @@
 <h2>Team Stats</h2>
 <table class="stats">
+	
 	<thead>
 		<tr>
 			<th>Batting</th>
@@ -19,6 +20,7 @@
 			<th>OBP</th>
 		</tr>
 	</thead>
+
 	<tbody class="players">
 			<% @players.each do |p| %>
 				<tr class="player">
@@ -41,8 +43,10 @@
 				</tr>
 			<% end %>
 	</tbody>
+
 </table>
 <table class="stats">
+
 	<thead>
 		<tr>
 			<th class="first_col">Pitching</th>
@@ -65,6 +69,7 @@
 			<th>WHIP</th>
 		</tr>
 	</thead>
+
 	<tbody class="players">
 		<% @players.each do |p| %>
 				<tr class="player">

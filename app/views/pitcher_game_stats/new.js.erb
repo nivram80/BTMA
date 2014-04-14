@@ -1,2 +1,2 @@
-$(".add_pitchers").append("<%= j render 'add_pitcher', :locals => {:game => @game} %>");
+$(".add_pitchers").append("<%= j render :partial => 'add_pitcher', :locals => {:pitcher_game_stat => @pitcher_game_stat, :game_id => params[:id]} %>");
 $(".add_pitcher_link").hide();

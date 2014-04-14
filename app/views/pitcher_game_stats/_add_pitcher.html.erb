@@ -1,26 +1,53 @@
-<tr class="pitcher_form">
-	<%= form_for @pitcher_game_stat, :remote => true do |f| %>
-		<td><%= f.text_field :pitcher_num, :autofocus => true %></td>
-		<td><%= f.collection_select(:player_id, @players, :id, :fullname) %></td>
-		<td><%= f.check_box :start %></td>
-		<td><%= f.check_box :win %></td>
-		<td><%= f.check_box :loss %></td>
-		<td><%= f.check_box :sv %></td>
-		<td><%= f.check_box :cg %></td>
-		<td><%= f.check_box :sho %></td>
-		<td><%= f.text_field :ip %></td>
-		<td><%= f.text_field :hits %></td>
-		<td><%= f.text_field :runs %></td>
-		<td><%= f.text_field :er %></td>
-		<td><%= f.text_field :hr %></td>
-		<td><%= f.text_field :hb %></td>
-		<td><%= f.text_field :bb %></td>
-		<td><%= f.text_field :ibb %></td>
-		<td><%= f.text_field :so %></td>
-		<%#= fields_for :game do |g| %>
-			<%# binding.pry %>
-  		<%= f.hidden_field :game_id, :value => 1 %>
-		<%# end %>
-		<td><%= f.submit "Save" %></td>
-	<% end %>
-</tr>
+<%= form_for pitcher_game_stat, :remote => true do |f| %>
+	<table class="add_stats">
+
+		<thead>
+			<tr>
+				<th>#</th>
+				<th> Add a Pitcher </th>
+				<th>Start</th>
+				<th>Win</th>
+				<th>Loss</th>
+				<th>Save</th>
+				<th>CG</th>
+				<th>SHO</th>
+				<th>IP</th>
+				<th>Hits</th>
+				<th>Runs</th>
+				<th>ER</th>
+				<th>HR</th>
+				<th>HB</th>
+				<th>BB</th>
+				<th>IBB</th>
+				<th>SO</th>
+				<th>&nbsp;</th>
+			</tr>
+	</thead>
+
+		<tbody>
+			<tr class="pitcher_form">
+				<%= f.hidden_field :game_id, :value => game_id %>
+				<td><%= f.text_field :pitcher_num, :autofocus => true %></td>
+				<td><%= f.collection_select(:player_id, @players, :id, :fullname) %></td>
+				<td><%= f.check_box :start %></td>
+				<td><%= f.check_box :win %></td>
+				<td><%= f.check_box :loss %></td>
+				<td><%= f.check_box :sv %></td>
+				<td><%= f.check_box :cg %></td>
+				<td><%= f.check_box :sho %></td>
+				<td><%= f.text_field :ip %></td>
+				<td><%= f.text_field :hits %></td>
+				<td><%= f.text_field :runs %></td>
+				<td><%= f.text_field :er %></td>
+				<td><%= f.text_field :hr %></td>
+				<td><%= f.text_field :hb %></td>
+				<td><%= f.text_field :bb %></td>
+				<td><%= f.text_field :ibb %></td>
+				<td><%= f.text_field :so %></td>
+				<td><%= f.submit "Save" %></td>
+			</tr>
+		</tbody>
+
+	</table>
+<% end %>
+
