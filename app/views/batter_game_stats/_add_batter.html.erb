@@ -1,24 +1,49 @@
-<tr class="batter_form">
+<%= form_for @batter_game_stat, :remote => true do |f| %>
+	<table class="add_stats">
 
-	<%= form_for @batter_game_stat, :remote => true do |f| %>
-		<td><%= f.text_field :order_in_lineup, :autofocus => true %></td>
-		<td><%= f.collection_select(:player_id, @players, :id, :fullname) %></td>
-		<td><%= f.collection_select(:position_id, @positions, :id, :position) %></td>
-		<td><%= f.text_field :ab %></td>
-		<td><%= f.text_field :hits %></td>
-		<td><%= f.text_field :runs %></td>
-		<td><%= f.text_field :double %></td>
-		<td><%= f.text_field :triple %></td>
-		<td><%= f.text_field :hr %></td>
-		<td><%= f.text_field :rbi %></td>
-		<td><%= f.text_field :hb %></td>
-		<td><%= f.text_field :bb %></td>
-		<td><%= f.text_field :ibb %></td>
-		<td><%= f.text_field :so %></td>
-		<td><%= f.text_field :sb %></td>
-		<td><%= f.text_field :cs %></td>
-		<%= f.hidden_field :game_id, :value => 1 %>
-		<td><%= f.submit "Save" %></td>
-	<% end %>
-	
-</tr>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Position Players</th>
+				<th>Position</th>
+				<th>AB</th>
+				<th>Hits</th>
+				<th>Runs</th>
+				<th>2B</th>
+				<th>3B</th>
+				<th>HR</th>
+				<th>RBI</th>
+				<th>HB</th>
+				<th>BB</th>
+				<th>IBB</th>
+				<th>SO</th>
+				<th>SB</th>
+				<th>CS</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr class="batter_form">
+				<td><%= f.text_field :order_in_lineup, :autofocus => true %></td>
+				<td><%= f.collection_select(:player_id, @players, :id, :fullname) %></td>
+				<td><%= f.collection_select(:position_id, @positions, :id, :position) %></td>
+				<td><%= f.text_field :ab %></td>
+				<td><%= f.text_field :hits %></td>
+				<td><%= f.text_field :runs %></td>
+				<td><%= f.text_field :double %></td>
+				<td><%= f.text_field :triple %></td>
+				<td><%= f.text_field :hr %></td>
+				<td><%= f.text_field :rbi %></td>
+				<td><%= f.text_field :hb %></td>
+				<td><%= f.text_field :bb %></td>
+				<td><%= f.text_field :ibb %></td>
+				<td><%= f.text_field :so %></td>
+				<td><%= f.text_field :sb %></td>
+				<td><%= f.text_field :cs %></td>
+				<%= f.hidden_field :game_id, :value => 1 %>
+				<td><%= f.submit "Save" %></td>			
+			</tr>
+		</tbody>
+		
+	</table>
+<% end %>

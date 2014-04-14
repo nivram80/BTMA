@@ -1,6 +1,13 @@
 $(document).ready(function() {
-  $('.add_stats').hide();
+  $('.add_pitcher_stats').hide();
   $('.add_pitcher_link').click(function() {
-  	$('.add_stats').show();
+  	$('.add_pitcher_stats').show();
+  });
+});
+
+$(document).ready(function() {
+  $('.add_batter_stats').hide();
+  $('.add_batter_link').click(function() {
+  	$('.add_batter_stats').show();
   });
 });
