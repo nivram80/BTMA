@@ -4,27 +4,7 @@
 
 <table class="stats">
 
-	<thead>
-		<tr>
-			<th>#</th>
-			<th>Position Players</th>
-			<th>Position</th>
-			<th>AB</th>
-			<th>Hits</th>
-			<th>Runs</th>
-			<th>2B</th>
-			<th>3B</th>
-			<th>HR</th>
-			<th>RBI</th>
-			<th>HB</th>
-			<th>BB</th>
-			<th>IBB</th>
-			<th>SO</th>
-			<th>SB</th>
-			<th>CS</th>
-			<th></th>
-		</tr>
-	</thead>
+	<%= render :partial => "batter_stat_head" %>
 
 	<tbody class="added_batters">	
 		<% @batter_stats.each do |bs| %>
@@ -56,27 +36,7 @@
 
 	<table class="add_batter_stats">
 
-		<thead>
-			<tr>
-				<th>#</th>
-				<th>Add a Batter</th>
-				<th>Position</th>
-				<th>AB</th>
-				<th>Hits</th>
-				<th>Runs</th>
-				<th>2B</th>
-				<th>3B</th>
-				<th>HR</th>
-				<th>RBI</th>
-				<th>HB</th>
-				<th>BB</th>
-				<th>IBB</th>
-				<th>SO</th>
-				<th>SB</th>
-				<th>CS</th>
-				<th></th>
-			</tr>
-		</thead>
+		<%= render :partial => "batter_stat_head" %>
 
 		<tbody>
 			<tr class="batter_form">
@@ -105,33 +65,11 @@
 <% end %>
 
 <div class="add_batter_link content_button">Add Batter</div>
-<%#= link_to("Add Batter", :new_batter_game_stat, class: "add_batter_link content_button")  %>
 	
 </table>
 <table class="stats">
 
-	<thead>
-		<tr>
-			<th>#</th>
-			<th>Pitchers</th>
-			<th>Start</th>
-			<th>Win</th>
-			<th>Loss</th>
-			<th>Save</th>
-			<th>CG</th>
-			<th>SHO</th>
-			<th>IP</th>
-			<th>Hits</th>
-			<th>Runs</th>
-			<th>ER</th>
-			<th>HR</th>
-			<th>HB</th>
-			<th>BB</th>
-			<th>IBB</th>
-			<th>SO</th>
-			<th>&nbsp;</th>
-		</tr>
-	</thead>
+	<%= render :partial => "pitcher_stat_head" %>
 
 	<tbody class="added_pitchers">
 		<% @pitcher_stats.each do |ps| %>
@@ -162,28 +100,7 @@
 <%= form_for @pitcher_game_stat, :remote => true, :class => "add_pitcher" do |f| %>
 	<table class="add_pitcher_stats">
 
-		<thead>
-			<tr>
-				<th>#</th>
-				<th> Add a Pitcher </th>
-				<th>Start</th>
-				<th>Win</th>
-				<th>Loss</th>
-				<th>Save</th>
-				<th>CG</th>
-				<th>SHO</th>
-				<th>IP</th>
-				<th>Hits</th>
-				<th>Runs</th>
-				<th>ER</th>
-				<th>HR</th>
-				<th>HB</th>
-				<th>BB</th>
-				<th>IBB</th>
-				<th>SO</th>
-				<th>&nbsp;</th>
-			</tr>
-	</thead>
+	<%= render :partial => "pitcher_stat_head" %>
 
 		<tbody>
 			<tr class="pitcher_form">
@@ -212,4 +129,3 @@
 	</table>
 <% end %>
 <div class="add_pitcher_link content_button">Add Pitcher</div>
-<%#= link_to("Add Pitcher", :new_pitcher_game_stat, class: "add_pitcher_link content_button")  %>
