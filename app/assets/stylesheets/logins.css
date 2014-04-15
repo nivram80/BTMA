@@ -14,6 +14,9 @@
 	text-align: center;
 	margin: 0;
 }
+#logins .btma_logo p {
+	margin: -20px 0 0 0;
+}
 #logins h1 {
 	font-family: 'Bangers', cursive;
 	font-size: 260px;
@@ -26,22 +29,25 @@
 	width: 550px;
 }
 #logins .login {
-	text-align: left;
+	text-align: center;
 }
 #logins input[type=text] {
 	width: 350px;
 	font-size: 30px;
 	-webkit-appearance: none;
 	color: #313131;
-	padding: 2px 0 2px 10px;
+	padding: 2px 0px;
+	text-align: center;
 }
 #logins input[type=password] {
 	width: 350px;
 	font-size: 30px;
 	-webkit-appearance: none;
 	color: #313131;
-	padding: 2px 0 2px 10px;
+	padding: 2px 0px;
+	text-align: center;
 }
+/*
 #logins label {
 	width: 134px;
 	font-size: 30px;
@@ -49,11 +55,12 @@
 	text-align: right;
 	margin-right: 35px;
 }
+*/
 #logins input[type=submit] {
 	-webkit-appearance: none;	
-	width: 100px;
+	width: 350px;
 	font-size: 24px;
-	background-color: #fff;	
+	background-color: #89B151;
 	border: 1px solid #fff;
 	border-radius: 4px;
 	transition: all 1s ease;
@@ -61,13 +68,12 @@
 }
 #logins input[type=submit]:hover {
 	color: #fff;
-	background-color: #a04040;
 	cursor: pointer;
 }
 #logins .password {
 	margin-top: 20px;
 }
 #logins .submit {
-	text-align: right;
-	margin: 20px 15px 20px 0;
+	text-align: center;
+	margin: 20px 0px;
 }

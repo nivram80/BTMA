@@ -15,9 +15,9 @@ body {
 }
 h1 {
 	font-family: 'Squada One', cursive;
-	color: #fff;
+	color: #F4DDBE;
 	font-size: 80px;
-	text-shadow: -5px 1px #a04040;
+	/*text-shadow: -5px 1px #89B151;*/
 	margin-left: 30px;
 }
 h2 {
@@ -46,19 +46,20 @@ nav {
 	margin: 30px 20px 0 0;
 }
 nav a {
-	color: #313131;
-	background-color: #fff;
+	color: #201A02;
+	background-color: #89B151;
 	text-decoration: none;
 	padding: 5px 15px;
 	border-radius: 4px;
-	border: 1px solid #fff;
+	border: 1px solid #89B151;
 	transition: all 1s ease;
 }
 nav a:hover {
 	color: #fff;
-	background-color: #a04040;
+	background-color: #89B151;
 	/*border: 1px solid #a04040;*/
 }
+
 .win {
 	color: #0f0;
 	font-weight: bold;
@@ -78,7 +79,7 @@ nav a:hover {
 	display: inline-block;
 	color: #313131;
 	text-decoration: none;
-	background-color: #bbb;
+	background-color: #89B151;
 	margin: 20px 0 0 0;
 	border-radius: 4px;
 	padding: 7px 20px;
@@ -98,7 +99,7 @@ nav a:hover {
 	width: 100%;
 }
 .stats thead {
-	background-color: #a04040;
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #715a38), color-stop(1, #3d3024) );
 	color: #fff;
 	border-radius: 4px;
 }
@@ -112,10 +113,10 @@ nav a:hover {
 	width: 101%;
 	border: 1px solid #313131;
 	border-radius: 4px;
-	background-color: #eee;
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F4DDBE), color-stop(1, #ceb99f) );
 }
 .add_batter_stats thead, .add_pitcher_stats thead {
-	background-color: #eee;
+	/*background-color: #eee;*/
 	color: #313131;
 	border-radius: 4px;
 }
@@ -132,7 +133,7 @@ nav a:hover {
 	text-align: center;
 }
 .player td a, .coach td a, .games td a, .add_player td a, .added_batter td a {
-	color: #a04040;
+	color: #715a38;
 	text-decoration: none;
 }
 .player:hover, .coach:hover, .game:hover, .added_pitcher:hover, .added_batter:hover {
