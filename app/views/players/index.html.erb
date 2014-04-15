@@ -22,23 +22,23 @@
 	</thead>
 
 	<tbody class="players">
-			<% @players.each do |p| %>
+			<% @batter_stats.each do |bs| %>
 				<tr class="player">
-					<td><%= link_to(p.fullname, player_path(p.id)) %></td>
-					<td><%= p.batter_game_stats.sum(:ab) %></td>
-					<td><%= p.batter_game_stats.sum(:hits) %></td>
-					<td><%= p.batter_game_stats.sum(:runs) %></td>
-					<td><%= p.batter_game_stats.sum(:double) %></td>
-					<td><%= p.batter_game_stats.sum(:triple) %></td>
-					<td><%= p.batter_game_stats.sum(:hr) %></td>
-					<td><%= p.batter_game_stats.sum(:rbi) %></td>
-					<td><%= p.batter_game_stats.sum(:sb) %></td>
-					<td><%= p.batter_game_stats.sum(:cs) %></td>
-					<td><%= p.batter_game_stats.sum(:bb) %></td>
-					<td><%= p.batter_game_stats.sum(:ibb) %></td>
-					<td><%= p.batter_game_stats.sum(:hb) %></td>
-					<td><%= number_with_precision(((p.batter_game_stats.sum(:hits).to_d/p.batter_game_stats.sum(:ab).to_d).to_d), :precision => 3).to_s.sub("0", "") %></td>
-					<td><%= number_with_precision((((p.batter_game_stats.sum(:hits) + p.batter_game_stats.sum(:bb)).to_d / p.batter_game_stats.sum(:ab).to_d).to_d), :precision => 3).to_s.sub("0", "") %></td>
+					<td><%= link_to(bs.fname + ' ' + bs.lname, player_path(bs.player_id)) %></td>
+					<td><%= bs.sum_ab %></td>
+					<td><%= bs.sum_hits %></td>
+					<td><%= bs.sum_runs %></td>
+					<td><%= bs.sum_double %></td>
+					<td><%= bs.sum_triple %></td>
+					<td><%= bs.sum_hr %></td>
+					<td><%= bs.sum_rbi %></td>
+					<td><%= bs.sum_sb %></td>
+					<td><%= bs.sum_cs %></td>
+					<td><%= bs.sum_bb %></td>
+					<td><%= bs.sum_ibb %></td>
+					<td><%= bs.sum_hb %></td>
+					<td><%= number_with_precision(((bs.sum_hits.to_d/bs.sum_ab.to_d).to_d), :precision => 3).to_s.sub("0", "") %></td>
+					<td><%= number_with_precision((((bs.sum_hits + bs.sum_bb).to_d / bs.sum_ab.to_d).to_d), :precision => 3).to_s.sub("0", "") %></td>
 				</tr>
 			<% end %>
 	</tbody>
@@ -70,26 +70,26 @@
 	</thead>
 
 	<tbody class="players">
-		<% @players.each do |p| %>
+		<% @pitcher_stats.each do |ps| %>
 				<tr class="player">
-					<td><%= link_to(p.fullname, player_path(p.id)) %></td>
-					<td><%= p.pitcher_game_stats.sum(:start) %></td>
-					<td><%= p.pitcher_game_stats.sum(:win) %></td>
-					<td><%= p.pitcher_game_stats.sum(:loss) %></td>
-					<td><%= p.pitcher_game_stats.sum(:sv) %></td>
-					<td><%= p.pitcher_game_stats.sum(:cg) %></td>
-					<td><%= p.pitcher_game_stats.sum(:sho) %></td>
-					<td><%= p.pitcher_game_stats.sum(:ip) %></td>
-					<td><%= p.pitcher_game_stats.sum(:hits) %></td>
-					<td><%= p.pitcher_game_stats.sum(:runs) %></td>
-					<td><%= p.pitcher_game_stats.sum(:er) %></td>
-					<td><%= p.pitcher_game_stats.sum(:hr) %></td>
-					<td><%= p.pitcher_game_stats.sum(:hb) %></td>
-					<td><%= p.pitcher_game_stats.sum(:bb) %></td>
-					<td><%= p.pitcher_game_stats.sum(:ibb) %></td>
-					<td><%= p.pitcher_game_stats.sum(:so) %></td>
-					<td><%= number_with_precision((((p.pitcher_game_stats.sum(:er).to_d / p.pitcher_game_stats.sum(:ip).to_d) * 9).to_d), :precision => 2) %></td>
-					<td><%= number_with_precision((((p.pitcher_game_stats.sum(:bb) + p.pitcher_game_stats.sum(:hits)).to_d / p.pitcher_game_stats.sum(:ip).to_d).to_d), :precision => 2) %></td>
+					<td><%= link_to(ps.fname + ' ' + ps.lname, player_path(ps.player_id)) %></td>
+					<td><%= ps.sum_start %></td>
+					<td><%= ps.sum_win %></td>
+					<td><%= ps.sum_loss %></td>
+					<td><%= ps.sum_sv %></td>
+					<td><%= ps.sum_cg %></td>
+					<td><%= ps.sum_sho %></td>
+					<td><%= ps.sum_ip %></td>
+					<td><%= ps.sum_hits %></td>
+					<td><%= ps.sum_runs %></td>
+					<td><%= ps.sum_er %></td>
+					<td><%= ps.sum_hr %></td>
+					<td><%= ps.sum_hb %></td>
+					<td><%= ps.sum_bb %></td>
+					<td><%= ps.sum_ibb %></td>
+					<td><%= ps.sum_so %></td>
+					<td><%= number_with_precision((((ps.sum_er.to_d / ps.sum_ip.to_d) * 9).to_d), :precision => 2) %></td>
+					<td><%= number_with_precision((((ps.sum_bb + ps.sum_hits).to_d / ps.sum_ip.to_d).to_d), :precision => 2) %></td>
 				</tr>
 			<% end %>
 
