@@ -25,21 +25,20 @@
 			<% @players.each do |p| %>
 				<tr class="player">
 					<td><%= link_to(p.fullname, player_path(p.id)) %></td>
-					<% bs = BatterGameStat.where(:player_id => p.id) %>
-					<td><%= bs.sum(:ab) %></td>
-					<td><%= bs.sum(:hits) %></td>
-					<td><%= bs.sum(:runs) %></td>
-					<td><%= bs.sum(:double) %></td>
-					<td><%= bs.sum(:triple) %></td>
-					<td><%= bs.sum(:hr) %></td>
-					<td><%= bs.sum(:rbi) %></td>
-					<td><%= bs.sum(:sb) %></td>
-					<td><%= bs.sum(:cs) %></td>
-					<td><%= bs.sum(:bb) %></td>
-					<td><%= bs.sum(:ibb) %></td>
-					<td><%= bs.sum(:hb) %></td>
-					<td><%= number_with_precision(((bs.sum(:hits).to_d/bs.sum(:ab).to_d).to_d), :precision => 3).to_s.sub("0", "") %></td>
-					<td><%= number_with_precision((((bs.sum(:hits) + bs.sum(:bb)).to_d / bs.sum(:ab).to_d).to_d), :precision => 3).to_s.sub("0", "") %></td>
+					<td><%= p.batter_game_stats.sum(:ab) %></td>
+					<td><%= p.batter_game_stats.sum(:hits) %></td>
+					<td><%= p.batter_game_stats.sum(:runs) %></td>
+					<td><%= p.batter_game_stats.sum(:double) %></td>
+					<td><%= p.batter_game_stats.sum(:triple) %></td>
+					<td><%= p.batter_game_stats.sum(:hr) %></td>
+					<td><%= p.batter_game_stats.sum(:rbi) %></td>
+					<td><%= p.batter_game_stats.sum(:sb) %></td>
+					<td><%= p.batter_game_stats.sum(:cs) %></td>
+					<td><%= p.batter_game_stats.sum(:bb) %></td>
+					<td><%= p.batter_game_stats.sum(:ibb) %></td>
+					<td><%= p.batter_game_stats.sum(:hb) %></td>
+					<td><%= number_with_precision(((p.batter_game_stats.sum(:hits).to_d/p.batter_game_stats.sum(:ab).to_d).to_d), :precision => 3).to_s.sub("0", "") %></td>
+					<td><%= number_with_precision((((p.batter_game_stats.sum(:hits) + p.batter_game_stats.sum(:bb)).to_d / p.batter_game_stats.sum(:ab).to_d).to_d), :precision => 3).to_s.sub("0", "") %></td>
 				</tr>
 			<% end %>
 	</tbody>
@@ -74,24 +73,23 @@
 		<% @players.each do |p| %>
 				<tr class="player">
 					<td><%= link_to(p.fullname, player_path(p.id)) %></td>
-					<% bs = PitcherGameStat.where(:player_id => p.id) %>
-					<td><%= bs.sum(:start) %></td>
-					<td><%= bs.sum(:win) %></td>
-					<td><%= bs.sum(:loss) %></td>
-					<td><%= bs.sum(:sv) %></td>
-					<td><%= bs.sum(:cg) %></td>
-					<td><%= bs.sum(:sho) %></td>
-					<td><%= bs.sum(:ip) %></td>
-					<td><%= bs.sum(:hits) %></td>
-					<td><%= bs.sum(:runs) %></td>
-					<td><%= bs.sum(:er) %></td>
-					<td><%= bs.sum(:hr) %></td>
-					<td><%= bs.sum(:hb) %></td>
-					<td><%= bs.sum(:bb) %></td>
-					<td><%= bs.sum(:ibb) %></td>
-					<td><%= bs.sum(:so) %></td>
-					<td><%= number_with_precision((((bs.sum(:er).to_d / bs.sum(:ip).to_d) * 9).to_d), :precision => 2) %></td>
-					<td><%= number_with_precision((((bs.sum(:bb) + bs.sum(:hits)).to_d / bs.sum(:ip).to_d).to_d), :precision => 2) %></td>
+					<td><%= p.pitcher_game_stats.sum(:start) %></td>
+					<td><%= p.pitcher_game_stats.sum(:win) %></td>
+					<td><%= p.pitcher_game_stats.sum(:loss) %></td>
+					<td><%= p.pitcher_game_stats.sum(:sv) %></td>
+					<td><%= p.pitcher_game_stats.sum(:cg) %></td>
+					<td><%= p.pitcher_game_stats.sum(:sho) %></td>
+					<td><%= p.pitcher_game_stats.sum(:ip) %></td>
+					<td><%= p.pitcher_game_stats.sum(:hits) %></td>
+					<td><%= p.pitcher_game_stats.sum(:runs) %></td>
+					<td><%= p.pitcher_game_stats.sum(:er) %></td>
+					<td><%= p.pitcher_game_stats.sum(:hr) %></td>
+					<td><%= p.pitcher_game_stats.sum(:hb) %></td>
+					<td><%= p.pitcher_game_stats.sum(:bb) %></td>
+					<td><%= p.pitcher_game_stats.sum(:ibb) %></td>
+					<td><%= p.pitcher_game_stats.sum(:so) %></td>
+					<td><%= number_with_precision((((p.pitcher_game_stats.sum(:er).to_d / p.pitcher_game_stats.sum(:ip).to_d) * 9).to_d), :precision => 2) %></td>
+					<td><%= number_with_precision((((p.pitcher_game_stats.sum(:bb) + p.pitcher_game_stats.sum(:hits)).to_d / p.pitcher_game_stats.sum(:ip).to_d).to_d), :precision => 2) %></td>
 				</tr>
 			<% end %>
 
