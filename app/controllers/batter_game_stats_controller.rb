@@ -22,7 +22,7 @@ class BatterGameStatsController < ApplicationController
 	def create
 		@batter_game_stat = BatterGameStat.create(params[:batter_game_stat])
 		@batter_stats = BatterGameStat.where(:game_id => params[:batter_game_stat][:game_id]).order(:order_in_lineup)
-		binding.pry
+		
 		respond_to do |format|
       format.html
       format.js 
