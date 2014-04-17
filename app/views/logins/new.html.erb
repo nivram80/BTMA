@@ -5,15 +5,13 @@
 
 <div class="login_container clear">
 	<%= form_tag logins_path, :class => "login" do %>
-		<!--<h3>Vets</h3>-->
+
 		<p class="text_field">
 		  <%= text_field_tag :email, nil, placeholder: "Email" %>
 		</p>
-
 		<p class="text_field clear">
 		  <%= password_field_tag :password, nil, placeholder: "Password" %>
 		</p> 
-
 		<p class="submit">
 			<%= submit_tag "Log In" %>
 		</p>
@@ -23,19 +21,56 @@
 
 <div class="new_team">
 	<%= form_for @team, :class => "form" do |f| %>
-		
-		<p class="text_field">
-			<%= f.text_field :nickname, :placeholder => "Team Nickname" %>
-		</p>
+		<fieldset>
+			<legend>Team Info</legend>
+			<p>
+				<%= f.text_field :nickname, :placeholder => "Team Nickname" %>
+			</p>
+			<p>
+				<%= f.text_field :city, :placeholder => "City" %>
+			</p>
+			<p>
+				<%= f.text_field :state, :placeholder => "State" %>
+			</p>
+			<!--<p class="text_field">
+				<%#= f.text_field :logo, :placeholder => "Logo" %>
+			</p>-->
+		</fieldset>
+		<br />
+		<fieldset>
+			<legend>Coach Info</legend>
+			<%= fields_for @coach do |c| %>
+				<p>
+					<%= c.text_field :fname, :placeholder => "First Name" %>
+				</p>
+				<p>
+					<%= c.text_field :lname, :placeholder => "Last Name" %>
+				</p>
+				<p>
+					<%= c.text_field :phone, :placeholder => "Phone" %>
+				</p>
+				<p>
+					<%= c.text_field :email, :placeholder => "Email" %>
+				</p>
+				<p>
+					<%= c.password_field :password, :placeholder => "Password" %>
+				</p>
+				<p>
+					<%= c.password_field :password_confirmation, :placeholder => "Password Confirm" %>
+				</p>
+				<p>
+					<%= c.label :manager, "Manager" %>
+					<%= c.check_box :manager %>
 
-		<p class="text_field">
-			<%= f.text_field :city, :placeholder => "City" %>
-		</p>
-		
-		<!--<p class="text_field">
-			<%#= f.text_field :logo, :placeholder => "Logo" %>
-		</p>-->
-		
+					<%= c.label :first_base, "1B Coach" %>
+					<%= c.check_box :first_base%>
+
+					<%= c.label :third_base, "3B Coach" %>
+					<%= c.check_box :third_base %>
+				</p>
+			<% end %>
+		</fieldset>
+
 		<p class="submit">
 			<%= f.submit %>
 		</p>
@@ -45,4 +80,3 @@
 
 <h3 class="center new_team_link_head">No Team Yet?</h3>
 <p class="center new_team_link">Create Team</p>
-<!--<p class="center">Already have a team but no account yet? &nbsp;&nbsp;<%#= link_to "Sign Up", :new_coach %></p>-->

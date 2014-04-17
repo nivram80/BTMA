@@ -2,6 +2,7 @@ class LoginsController < ApplicationController
 
 	def new
 		@team = Team.new
+		@coach = Coach.new
 	end
 
 	def create

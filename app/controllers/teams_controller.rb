@@ -46,6 +46,14 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.create(params[:team])
+    @coach = Coach.create(params[:coach])
+    @coach.update_attributes({:team_id => @team.id})
+
+    session[:coach_id] = @coach.id
+    session[:team_id] = @team.id
+    
+    
+    redirect_to ("/teams/#{@team.id}")
   end
 
   def edit

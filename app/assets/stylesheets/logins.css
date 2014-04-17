@@ -41,6 +41,7 @@
 	color: #313131;
 	padding: 2px 0px;
 	text-align: center;
+	border: 2px solid #F4DDBE;
 	border-radius: 4px;
 }
 #logins input[type=password] {
@@ -50,7 +51,11 @@
 	color: #313131;
 	padding: 2px 0px;
 	text-align: center;
+	border: 2px solid #F4DDBE;
 	border-radius: 4px;
+}
+#logins input[type=checkbox] {
+	margin-right: 20px;
 }
 #logins input[type=submit] {
 	-webkit-appearance: none;	
@@ -66,9 +71,6 @@
 	color: #fff;
 	cursor: pointer;
 	border: 1px solid #fff;
-}
-#logins .text_field {
-	margin-top: 20px;
 }
 #logins .submit {
 	text-align: center;
@@ -93,5 +95,17 @@
 	border: 1px solid #fff;
 }
 #logins .new_team_link_head {
+	margin-top: 20px;
+}
+#logins fieldset {
+	margin: 0 auto;
+	width: 400px;
+	padding: 0px 10px 20px 10px;
+	border-radius: 4px;
+}
+#logins legend {
+	text-align: center;
+}
+#logins fieldset p, #logins .login_container p {
 	margin-top: 20px;
 }
