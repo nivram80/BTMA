@@ -17,7 +17,12 @@ class PlayersController < ApplicationController
                       SUM(hb) AS sum_hb, 
                       player_id, 
                       players.fname AS fname,
-                      players.lname AS lname").group("batter_game_stats.player_id, fname, lname").joins(:player).order(:lname)
+                      players.lname AS lname,
+                      players.team_id AS team_id")
+                      .group("batter_game_stats.player_id, fname, lname, team_id")
+                      .joins(:player)
+                      .order(:lname)
+                      .where("players.team_id = ?", session[:team_id])
     @pitcher_stats = PitcherGameStat.select("
                       SUM(start) AS sum_start, 
                       SUM(win) AS sum_win, 
@@ -36,7 +41,12 @@ class PlayersController < ApplicationController
                       SUM(so) AS sum_so, 
                       player_id, 
                       players.fname AS fname,
-                      players.lname AS lname").group("pitcher_game_stats.player_id, fname, lname").joins(:player).order(:lname)
+                      players.lname AS lname,
+                      players.team_id AS team_id")
+                      .group("pitcher_game_stats.player_id, fname, lname, team_id")
+                      .joins(:player)
+                      .order(:lname)
+                      .where("players.team_id = ?", session[:team_id])
   end
 
   def show
