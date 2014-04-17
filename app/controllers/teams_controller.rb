@@ -17,10 +17,12 @@ class TeamsController < ApplicationController
       players.fname AS fname,
       players.lname AS lname, 
       players.bats AS bats, 
-      players.throws AS throws")
-      .group("batter_game_stats.player_id, fname, lname, bats, throws")
+      players.throws AS throws,
+      players.team_id AS team_id")
+      .group("batter_game_stats.player_id, fname, lname, bats, throws, team_id")
       .joins(:player, :position)
       .order(:lname)
+      .where("players.team_id = ?", session[:team_id])
 
     @pitchers = PitcherGameStat.select("
       SUM(ip) AS sum_ip, 
@@ -34,10 +36,12 @@ class TeamsController < ApplicationController
       player_id, 
       players.fname AS fname, 
       players.lname AS lname, 
-      players.throws AS throws")
-      .group("pitcher_game_stats.player_id, fname, lname, throws")
+      players.throws AS throws,
+      players.team_id AS team_id")
+      .group("pitcher_game_stats.player_id, fname, lname, throws, team_id")
       .joins(:player)
       .order(:lname)
+      .where("players.team_id = ?", session[:team_id])
   end
 
   def new
