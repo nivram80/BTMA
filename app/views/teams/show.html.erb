@@ -1,7 +1,7 @@
 <div class="home left">
 	<h2>Roster</h2>
 	<table class="stats">
-		
+
 		<thead>
 			<tr>
 				<th>Player</th>
@@ -11,7 +11,7 @@
 			</tr>
 		</thead>
 
-		<tbody>
+		<tbody class="players">
 			<% @position_players.each do |pp| %>
 				<tr class="player">
 					<td><%= link_to(pp.fname + ' ' + pp.lname, player_path(pp.player_id)) %></td>
