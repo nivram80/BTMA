@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
 
 	def index
-		@games = Game.order("game_datetime")
+		@games = Game.order("game_datetime").where(:team_id => session[:team_id])
 	end
 
 	def show
