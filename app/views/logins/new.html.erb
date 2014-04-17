@@ -5,17 +5,44 @@
 
 <div class="login_container clear">
 	<%= form_tag logins_path, :class => "login" do %>
-		<p class="email">
-		  <%#= label_tag "Email: " %>
+		<!--<h3>Vets</h3>-->
+		<p class="text_field">
 		  <%= text_field_tag :email, nil, placeholder: "Email" %>
 		</p>
-		<p class="password clear">
-		  <%#= label_tag "Password: " %>
+
+		<p class="text_field clear">
 		  <%= password_field_tag :password, nil, placeholder: "Password" %>
 		</p> 
+
 		<p class="submit">
 			<%= submit_tag "Log In" %>
 		</p>
+
 	<% end %>
 </div>
-<p class="center">No account yet? &nbsp;&nbsp;<%= link_to "Sign Up", :new_coach %></p>
+
+<div class="new_team">
+	<%= form_for @team, :class => "form" do |f| %>
+		
+		<p class="text_field">
+			<%= f.text_field :nickname, :placeholder => "Team Nickname" %>
+		</p>
+
+		<p class="text_field">
+			<%= f.text_field :city, :placeholder => "City" %>
+		</p>
+		
+		<p class="text_field">
+			<%= f.text_field :logo, :placeholder => "Logo" %>
+		</p>
+		
+		<p class="submit">
+			<%= f.submit %>
+		</p>
+
+	<% end %>
+</div>
+
+<h3 class="center new_team_link_head">No Team Yet?</h3>
+<p class="center new_team_link">Create Team</p>
+<!--<p class="center">Already have a team but no account yet? &nbsp;&nbsp;<%#= link_to "Sign Up", :new_coach %></p>-->

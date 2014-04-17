@@ -15,7 +15,7 @@
 	margin: 0;
 }
 #logins .btma_logo p {
-	margin: -20px 0 0 0;
+	margin: -30px 0 0 0;
 }
 #logins h1 {
 	font-family: 'Bangers', cursive;
@@ -25,11 +25,14 @@
 }
 #logins .login_container {
 	text-align: center;
-	margin: 50px auto 0 auto;
+	margin: 30px auto 0 auto;
 	width: 550px;
 }
-#logins .login {
+#logins .login, #logins .new_team {
 	text-align: center;
+}
+#logins .new_team {
+	margin-top: 50px;
 }
 #logins input[type=text] {
 	width: 350px;
@@ -38,6 +41,7 @@
 	color: #313131;
 	padding: 2px 0px;
 	text-align: center;
+	border-radius: 4px;
 }
 #logins input[type=password] {
 	width: 350px;
@@ -46,16 +50,8 @@
 	color: #313131;
 	padding: 2px 0px;
 	text-align: center;
+	border-radius: 4px;
 }
-/*
-#logins label {
-	width: 134px;
-	font-size: 30px;
-	display: inline-block;
-	text-align: right;
-	margin-right: 35px;
-}
-*/
 #logins input[type=submit] {
 	-webkit-appearance: none;	
 	width: 350px;
@@ -70,10 +66,30 @@
 	color: #fff;
 	cursor: pointer;
 }
-#logins .password {
+#logins .text_field {
 	margin-top: 20px;
 }
 #logins .submit {
 	text-align: center;
 	margin: 20px 0px;
+}
+#logins .new_team_link {
+	cursor: pointer;
+	width: 328px;
+	font-size: 21px;
+	background-color: #715a38;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	transition: all 1s ease;
+	padding: 5px 10px;
+	color: #fff;
+	margin: 5px auto 20px auto;
+}
+#logins .new_team_link:hover {
+	background-color: #fff;
+	color: #313131;
+	cursor: pointer;
+}
+#logins .new_team_link_head {
+	margin-top: 20px;
 }
