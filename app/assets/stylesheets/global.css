@@ -1,6 +1,7 @@
-* {
+*, *:before, *:after {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
 }
 .clear:before,
 .clear:after {
@@ -38,6 +39,7 @@ h2 {
 	top: 0;
 	left: 0;
 	width: 100%;
+	box-shadow: 2px 2px 2px #888;
 }
 .logo {
 	margin-left: 40px;
@@ -95,7 +97,7 @@ nav a:hover {
 }
 .stats {
 	border-spacing: 0px;
-	margin: 20px 60px 0 0;
+	margin: 20px 30px 0 0;
 	width: 100%;
 }
 .stats thead {
@@ -155,4 +157,5 @@ footer {
 	background-color: #313131;
 	margin: 50px 0 0 0;
 	text-align: center;
+	box-shadow: 2px -2px 2px #888;
 }

@@ -1,3 +1,11 @@
 #teams .home {
-	width: 44%;
+	width: 46%;
+	margin: 0 20px;
+}
+#teams .stats {
+	margin: 0;
+	padding: 0;
+}
+#teams h2 {
+	margin-bottom: 20px;
 }
