@@ -1,32 +1,31 @@
-<table class="stats left">
+<table class="stats home left">
 	<thead>
 		<tr class="sections">
-			<th>Position Players</th>
+			<th>Roster</th>
 		</tr>
 		<tr>
 			<th>Player</th>
 			<th>Position(s)</th>
 			<th>Bats/Throws</th>
-			<th>AVG</th>
+			<!--<th>AVG</th>
 			<th>HR</th>
 			<th>RBI</th>
-			<th>SB</th>
+			<th>SB</th>-->
 		</tr>
 	</thead>
 	<tbody class="players">
-			<% @position_players.each do |pp| %>
+			<% @players.each do |p| %>
 				<tr class="player">
-					<td><%= link_to(pp.fname + ' ' + pp.lname, player_path(pp.player_id)) %></td>
-					<td><%= pp.position %></td>
-					<td><%= pp.bats %>/<%= pp.throws %></td>
-					<td><%= number_with_precision(((pp.sum_hits.to_d / pp.sum_ab.to_d).to_d), :precision => 3).to_s.sub("0", "") %></td>
-					<td><%= pp.sum_hr %></td>
-					<td><%= pp.sum_rbi %></td>
-					<td><%= pp.sum_sb %></td>
+					<td><%= link_to(p.fname + ' ' + p.lname, player_path(p.id)) %></td>
+					<td><%#= p.position %></td>
+					<td><%= p.bats %>/<%= p.throws %></td>
 				</tr>
 			<% end %>
 	</tbody>
 </table>
+
+<%= link_to "Add Player", :new_player, :class => "content_button left" %>
+<!--
 <table class="stats left">
 	<thead>
 		<tr class="sections">
@@ -43,21 +42,21 @@
 		</tr>
 	</thead>
 	<tbody class="players">
-			<% @pitchers.each do |pitcher| %>
+			<%# @pitchers.each do |pitcher| %>
 				<tr class="player">
-					<td><%= link_to(pitcher.fname + ' ' + pitcher.lname, player_path(pitcher.player_id)) %></td>
-					<td><%= pitcher.throws %></td>
-					<td><%= number_with_precision((((pitcher.sum_er.to_d / pitcher.sum_ip.to_d) * 9).to_d), :precision => 2) %></td>
-					<td><%= pitcher.sum_win %></td>
-					<td><%= pitcher.sum_loss %></td>
-					<td><%= pitcher.sum_sv %></td>
-					<td><%= pitcher.sum_so %></td>
+					<td><%#= link_to(pitcher.fname + ' ' + pitcher.lname, player_path(pitcher.player_id)) %></td>
+					<td><%#= pitcher.throws %></td>
+					<td><%#= number_with_precision((((pitcher.sum_er.to_d / pitcher.sum_ip.to_d) * 9).to_d), :precision => 2) %></td>
+					<td><%#= pitcher.sum_win %></td>
+					<td><%#= pitcher.sum_loss %></td>
+					<td><%#= pitcher.sum_sv %></td>
+					<td><%#= pitcher.sum_so %></td>
 				</tr>
-			<% end %>
+			<%# end %>
 	</tbody>
+-->
 
-
-<table class="stats left">
+<table class="stats home left">
 	<thead>
 		<tr class="sections">
 			<th>Coaches</th>
@@ -80,3 +79,4 @@
 			<% end %>
 	</tbody>
 </table>
+<%= link_to "Add Coach", :new_coach, :class => "content_button left" %>

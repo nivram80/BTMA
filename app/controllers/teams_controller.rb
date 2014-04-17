@@ -7,22 +7,10 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     @coaches = Coach.where(team_id: params[:id])
 
-    @position_players = BatterGameStat.select("
-      SUM(ab) AS sum_ab,
-      SUM(hits) AS sum_hits, 
-      SUM(hr) AS sum_hr, 
-      SUM(rbi) AS sum_rbi, 
-      SUM(sb) AS sum_sb, 
-      player_id, 
-      players.fname AS fname,
-      players.lname AS lname, 
-      players.bats AS bats, 
-      players.throws AS throws,
-      players.team_id AS team_id")
-      .group("batter_game_stats.player_id, fname, lname, bats, throws, team_id")
-      .joins(:player, :position)
+    @players = Player.select("id, fname, lname, bats, throws, team_id")
+      .group("id")
       .order(:lname)
-      .where("players.team_id = ?", session[:team_id])
+      .where("team_id = ?", session[:team_id])
 
     @pitchers = PitcherGameStat.select("
       SUM(ip) AS sum_ip, 
