@@ -57,7 +57,7 @@
 #logins input[type=checkbox] {
 	margin-right: 20px;
 }
-#logins input[type=submit] {
+#logins input[type=submit], #logins .new_team_link {
 	-webkit-appearance: none;	
 	width: 350px;
 	font-size: 24px;
@@ -66,8 +66,10 @@
 	border-radius: 4px;
 	transition: all 1s ease;
 	padding: 5px 10px;
+	color: #313131;
+	margin: 0 auto;
 }
-#logins input[type=submit]:hover {
+#logins input[type=submit]:hover, #logins .new_team_link:hover {
 	color: #fff;
 	cursor: pointer;
 	border: 1px solid #fff;
@@ -75,24 +77,6 @@
 #logins .submit {
 	text-align: center;
 	margin: 20px 0px;
-}
-#logins .new_team_link {
-	cursor: pointer;
-	width: 328px;
-	font-size: 21px;
-	font-weight: bold;
-	background-color: #89B151;
-	border: 1px solid #89B151;
-	border-radius: 4px;
-	transition: all 1s ease;
-	padding: 5px 10px;
-	color: #313131;
-	margin: 5px auto 20px auto;
-}
-#logins .new_team_link:hover {
-	color: #fff;
-	cursor: pointer;
-	border: 1px solid #fff;
 }
 #logins .new_team_link_head {
 	margin-top: 20px;
