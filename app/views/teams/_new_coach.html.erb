@@ -1,0 +1,37 @@
+<%= form_for coach, :remote => true do |f| %>
+
+	<%= f.hidden_field :team_id, :value => session[:team_id] %>
+	<p>
+		<%= f.text_field :fname, :placeholder => "First Name" %>
+	</p>
+	<p>
+		<%= f.text_field :lname, :placeholder => "Last Name" %>
+	</p>
+	<p>
+		<%= f.text_field :phone, :placeholder => "Phone" %>
+	</p>
+	<p>
+		<%= f.text_field :email, :placeholder => "Email" %>
+	</p>
+	<p>
+		<%= f.password_field :password, :placeholder => "Password" %>
+	</p>
+	<p>
+		<%= f.password_field :password_confirmation, :placeholder => "Password Confirm" %>
+	</p>
+	<p>
+		<%= f.label :manager, "Manager" %>
+		<%= f.check_box :manager %>
+
+		<%= f.label :first_base, "1B Coach" %>
+		<%= f.check_box :first_base%>
+
+		<%= f.label :third_base, "3B Coach" %>
+		<%= f.check_box :third_base %>
+	</p>
+	<p>
+		<%= f.submit "Add Coach" %>
+	</p>
+<% end %>
+
+<div class="no_add_coach">Nevermind</div>

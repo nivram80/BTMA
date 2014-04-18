@@ -101,7 +101,9 @@ nav a:hover {
 	width: 100%;
 }
 .stats thead {
-	background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #715a38), color-stop(1, #3d3024) );
+	background-color: #715a38;
+	background-image: -webkit-linear-gradient(top, #715a38, #3d3024);
+	background-image: -moz-linear-gradient(top, #715a38, #3d3024);
 	color: #fff;
 	border-radius: 4px;
 }

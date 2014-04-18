@@ -23,7 +23,7 @@
 	color: #313131;
 	padding: 2px 0px;
 	text-align: center;
-	border: 2px solid #F4DDBE;
+	border: 2px solid #715a38;
 	border-radius: 4px;
 }
 #teams input[type=password] {
@@ -33,7 +33,7 @@
 	color: #313131;
 	padding: 2px 0px;
 	text-align: center;
-	border: 2px solid #F4DDBE;
+	border: 2px solid #715a38;
 	border-radius: 4px;
 }
 #teams input[type=submit] {
@@ -54,4 +54,16 @@
 #teams .submit {
 	text-align: center;
 	margin: 20px 0px;
+}
+#teams .no_add_player, #teams .no_add_coach {
+	clear: both;
+	margin: 10px auto 10px auto;
+	width: 90px;
+	text-decoration: underline;
+	transition: all 1s ease;
+}
+#teams .no_add_player:hover, #teams .no_add_coach:hover {
+	color: #89B151;
+	cursor: pointer;
+	text-decoration: none;
 }

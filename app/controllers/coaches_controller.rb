@@ -9,15 +9,21 @@ class CoachesController < ApplicationController
   end
 
   def create
-    @coach = Coach.new(params[:coach])
-    @team = Team.find(params[:coach][:team_id])
+    @coach = Coach.create(params[:coach])
+    @coaches = Coach.where(team_id: session[:team_id])
+    # @team = Team.find(params[:coach][:team_id])
     
-    if @coach.save
-      session[:coach_id] = @coach_id
-      redirect_to ("/teams/#{params[:coach][:team_id]}")
-    else
-      render "new"
+    respond_to do |format|
+      format.html
+      format.js 
     end
+
+    # if @coach.save
+    #   session[:coach_id] = @coach_id
+    #   redirect_to ("/teams/#{params[:coach][:team_id]}")
+    # else
+    #   render "new"
+    # end
   end
 
   def edit

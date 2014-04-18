@@ -22,17 +22,6 @@
 			<% end %>
 		</tbody>
 
-		<!--<tbody class="players">
-				<%# @position_players.each do |pp| %>
-					<tr class="player">
-						<td><%#= link_to(pp.fname + ' ' + pp.lname, player_path(pp.id)) %></td>
-						<td><%#= pp.position %></td>
-						<td><%#= pp.bats %></td>
-						<td><%#= pp.throws %></td>
-					</tr>
-				<%# end %>
-		</tbody>-->
-
 	</table>
 
 <div class="content_button left new_player_link">Add Player</div>
@@ -65,6 +54,7 @@
 		</tbody>
 	</table>
 
-<%= link_to "Add Coach", :new_coach, :class => "content_button left" %>
+<div class="content_button left new_coach_link">Add Coach</div>
+<%= render :partial => "new_coach", :locals => {:coach => @coach} %>
 
 </div>

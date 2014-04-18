@@ -1,0 +1,8 @@
+<% coaches.each do |c| %>
+	<tr class="coach">
+		<td><%= c.fullname %></td>
+		<td><%= "X" if c.manager %></td>
+		<td><%= "X" if c.first_base %></td>
+		<td><%= "X" if c.third_base %></td>
+	</tr>
+<% end %>

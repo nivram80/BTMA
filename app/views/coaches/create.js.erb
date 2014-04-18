@@ -1,0 +1,5 @@
+$(".coaches").html("<%= j render :partial => 'list_coaches', :locals => {:coaches => @coaches} %>");
+$(".new_coach").hide();
+$(".no_add_coach").hide();
+$(".new_coach")[0].reset();
+$(".new_coach_link").show();
