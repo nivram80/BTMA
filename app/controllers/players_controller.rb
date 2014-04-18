@@ -59,14 +59,12 @@ class PlayersController < ApplicationController
   end
 
   def create
-    @player = Player.new(params[:player])
-    @team = Team.find(params[:player][:team_id])
+    @player = Player.create(params[:player])
+    @position_players = BatterGameStat.select("player_id, players.fname AS fname, players.lname AS lname, players.bats AS bats, players.throws AS throws, position_id, positions.position AS position").group("batter_game_stats.player_id, batter_game_stats.position_id, fname, lname, bats, throws, position").joins(:player, :position).order(:lname)
     
-    if @player.save
-      session[:player_id] = @player_id
-      redirect_to ("/teams/#{params[:player][:team_id]}")
-    else
-      render "new"
+    respond_to do |format|
+      format.html
+      format.js 
     end
   end
 

@@ -115,7 +115,8 @@ nav a:hover {
 	width: 101%;
 	border: 1px solid #313131;
 	border-radius: 4px;
-	background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F4DDBE), color-stop(1, #ceb99f) );
+	background-color: #F4DDBE;
+	/*background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F4DDBE), color-stop(1, #ceb99f) );*/
 }
 .add_batter_stats thead, .add_pitcher_stats thead {
 	/*background-color: #eee;*/

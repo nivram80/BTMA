@@ -1,0 +1,4 @@
+$(".players").html("<%= j render :partial => 'list_players', :locals => {:position_players => @position_players} %>");
+$(".new_player").hide();
+$(".new_player")[0].reset();
+$(".new_player_link").show();

@@ -9,3 +9,49 @@
 #teams h2 {
 	margin-bottom: 20px;
 }
+#teams .new_player, #teams .new_coach {
+	margin-top: 30px;
+	text-align: center;
+}
+#teams .new_player p, #teams .new_coach p {
+	margin-top: 10px;
+}
+#teams input[type=text] {
+	width: 350px;
+	font-size: 30px;
+	-webkit-appearance: none;
+	color: #313131;
+	padding: 2px 0px;
+	text-align: center;
+	border: 2px solid #F4DDBE;
+	border-radius: 4px;
+}
+#teams input[type=password] {
+	width: 350px;
+	font-size: 30px;
+	-webkit-appearance: none;
+	color: #313131;
+	padding: 2px 0px;
+	text-align: center;
+	border: 2px solid #F4DDBE;
+	border-radius: 4px;
+}
+#teams input[type=submit] {
+	-webkit-appearance: none;	
+	width: 350px;
+	font-size: 24px;
+	background-color: #89B151;
+	border: 1px solid #89B151;
+	border-radius: 4px;
+	transition: all 1s ease;
+	padding: 5px 10px;
+}
+#teams input[type=submit]:hover {
+	color: #fff;
+	cursor: pointer;
+	border: 1px solid #fff;
+}
+#teams .submit {
+	text-align: center;
+	margin: 20px 0px;
+}

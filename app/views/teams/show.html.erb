@@ -35,39 +35,13 @@
 
 	</table>
 
-<%= link_to "Add Player", :new_player, :class => "content_button left" %>
+<div class="content_button left new_player_link">Add Player</div>
+<%= render :partial => "new_player", :locals => {:player => @player} %>
 
 </div>
-<!--
-<table class="stats left">
-	<thead>
-		<tr class="sections">
-			<th>Pitchers</th>
-		</tr>
-		<tr>
-			<th>Player</th>
-			<th>Throws</th>
-			<th>ERA</th>
-			<th>W</th>
-			<th>L</th>
-			<th>S</th>
-			<th>SO</th>
-		</tr>
-	</thead>
-	<tbody class="players">
-			<%# @pitchers.each do |pitcher| %>
-				<tr class="player">
-					<td><%#= link_to(pitcher.fname + ' ' + pitcher.lname, player_path(pitcher.player_id)) %></td>
-					<td><%#= pitcher.throws %></td>
-					<td><%#= number_with_precision((((pitcher.sum_er.to_d / pitcher.sum_ip.to_d) * 9).to_d), :precision => 2) %></td>
-					<td><%#= pitcher.sum_win %></td>
-					<td><%#= pitcher.sum_loss %></td>
-					<td><%#= pitcher.sum_sv %></td>
-					<td><%#= pitcher.sum_so %></td>
-				</tr>
-			<%# end %>
-	</tbody>
--->
+
+
+
 <div class="home left">
 	<h2>Coaches</h2>
 	<table class="stats">

@@ -1,0 +1,8 @@
+<% position_players.each do |pp| %>
+	<tr class="player">
+		<td><%= link_to(pp.fname + ' ' + pp.lname, player_path(pp.player_id)) %></td>
+		<td><%= pp.position.position %></td>
+		<td><%= pp.bats %></td>
+		<td><%= pp.throws %></td>
+	</tr>
+<% end %>

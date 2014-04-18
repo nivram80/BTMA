@@ -1,0 +1,20 @@
+<%= form_for player, :remote => true do |f| %>
+
+	<%= f.hidden_field :team_id, :value => session[:team_id] %>
+	<p>
+		<%= f.text_field :fname, :placeholder => "First Name" %>
+	</p>
+	<p>
+		<%= f.text_field :lname, :placeholder => "Last Name" %>
+	</p>
+	<p>
+		<%= f.label :throws %>
+		<%= f.select(:throws, options_for_select([['Right', 'Right'], ['Left', 'Left'], ['Switch', 'Switch']])) %>
+
+		<%= f.label :bats %>
+		<%= f.select(:bats, options_for_select([['Right', 'Right'], ['Left', 'Left'], ['Switch', 'Switch']])) %>
+	</p>
+	<p>
+		<%= f.submit "Add Player" %>
+	</p>
+<% end %>
