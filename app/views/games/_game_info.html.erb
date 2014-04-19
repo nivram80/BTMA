@@ -1,5 +1,7 @@
 <%= form_for @game do |f| %>
 	<div class="game_info">
+
+		<%= f.hidden_field :team_id, :value => session[:team_id] %>
 		<p>
 			<%= f.label :home_team? %>
 			<%= f.check_box :home_team %>

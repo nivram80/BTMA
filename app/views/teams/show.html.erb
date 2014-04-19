@@ -14,8 +14,8 @@
 		<tbody class="players">
 			<% @position_players.each do |pp| %>
 				<tr class="player">
-					<td><%= link_to(pp.fname + ' ' + pp.lname, player_path(pp.player_id)) %></td>
-					<td><%= pp.position.position %></td>
+					<td><%= link_to(pp.name, player_path(pp.player_id)) %></td>
+					<td><%= pp.pos[1...-1] %></td>
 					<td><%= pp.bats %></td>
 					<td><%= pp.throws %></td>
 				</tr>
@@ -28,8 +28,6 @@
 <%= render :partial => "new_player", :locals => {:player => @player} %>
 
 </div>
-
-
 
 <div class="home left">
 	<h2>Coaches</h2>
