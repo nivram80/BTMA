@@ -1,0 +1,7 @@
+<% new_players.each do |np| %>
+	<tr class="player">
+		<td><%= link_to(np.fullname, player_path(np.id)) %></td>
+		<td><%= np.bats %></td>
+		<td><%= np.throws %></td>
+	</tr>
+<% end %>

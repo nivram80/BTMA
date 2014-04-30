@@ -60,11 +60,12 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.create(params[:player])
-    @position_players = BatterGameStat
-      .select("player_id, players.fname || ' ' || players.lname AS name, players.bats AS bats, players.throws AS throws, array_agg(distinct positions.position) AS pos")
-      .group("player_id, fname, lname, throws, bats")
-      .joins(:player, :position)
-      .order(:lname)
+    @new_players = Player.all(:conditions => ["id NOT IN (?) and id NOT IN (?)", BatterGameStat.all.map(&:player_id), PitcherGameStat.all.map(&:player_id)])
+    # @position_players = BatterGameStat
+    #   .select("player_id, players.fname || ' ' || players.lname AS name, players.bats AS bats, players.throws AS throws, array_agg(distinct positions.position) AS pos")
+    #   .group("player_id, fname, lname, throws, bats")
+    #   .joins(:player, :position)
+    #   .order(:lname)
     
     respond_to do |format|
       format.html
