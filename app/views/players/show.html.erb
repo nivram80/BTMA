@@ -4,6 +4,9 @@
 	<p>Throws: <%= @player.throws %></p>
 	<p>Bats: <%= @player.bats %></p>
 </div>
+
+<%= link_to "Delete Player", player_path(@player.id), :method => :delete, :confirm => 'Are you sure you want to delete #{@player.fullname}?', :class => 'right' %>
+
 <table class="stats">
 	<thead>
 		<tr>

@@ -15,10 +15,6 @@ class TeamsController < ApplicationController
       .joins(:player, :position)
       .order(:lname)
 
-    # @position_players = BatterGameStat.select("player_id, players.fname || ' ' || players.lname AS name, players.bats AS bats, players.throws AS throws, position_id, array_agg(positions.position) AS pos").group("batter_game_stats.player_id, batter_game_stats.position_id, fname, lname, bats, throws, position").joins(:player, :position).order(:lname)
-
-    # @position_players = Player.where("team_id = ?", session[:team_id]).joins(:batter_game_stats => :position).pluck("positions.position AS pos").uniq.join(", ")
-
   end
 
   def new
