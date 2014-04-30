@@ -37,7 +37,7 @@
 		<tbody class="players">
 			<% @new_players.each do |np| %>
 				<tr class="player">
-					<td><%= link_to(np.name, player_path(np.player_id)) %></td>
+					<td><%= link_to(np.fullname, player_path(np.id)) %></td>
 					<td><%= np.bats %></td>
 					<td><%= np.throws %></td>
 				</tr>

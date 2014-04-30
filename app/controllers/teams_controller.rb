@@ -8,6 +8,8 @@ class TeamsController < ApplicationController
     @coach = Coach.new
     @coaches = Coach.where(team_id: params[:id])
     @player = Player.new
+    @new_players = Player.all(:conditions => ["id NOT IN (?)", BatterGameStat.all.map(&:player_id)])
+    # Foo.all(:conditions => ["id NOT IN (?)", Bar.all.map(&:foo_id)])
 
     @position_players = BatterGameStat
       .select("player_id, players.fname || ' ' || players.lname AS name, players.bats AS bats, players.throws AS throws, array_agg(distinct positions.position) AS pos")
