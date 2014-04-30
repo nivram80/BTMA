@@ -139,7 +139,7 @@ nav a:hover {
 .players tr:nth-child(odd):hover, .coaches tr:nth-child(odd):hover, .added_pitchers tr:nth-child(odd):hover, .added_batters tr:nth-child(odd):hover, .games tr:nth-child(odd):hover {
 	background-color: #ccc;
 }
-.players td, .coaches td, .games td, .added_pitcher td, .added_batters td {
+.players td, .coaches td, .games td, .added_pitcher td, .added_batters td, .new_players td {
 	text-align: center;
 }
 .player td a, .coach td a, .games td a, .add_player td a, .added_batter td a {
