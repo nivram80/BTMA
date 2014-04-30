@@ -11,7 +11,7 @@ class TeamsController < ApplicationController
     @new_players = Player.all(:conditions => ["id NOT IN (?) and id NOT IN (?)", BatterGameStat.all.map(&:player_id), PitcherGameStat.all.map(&:player_id)])
     
     @pitchers = PitcherGameStat
-      .select("player_id, players.fname || ' ' || players.lname AS name, players.throws AS throws")
+      .select("player_id, players.fname || ' ' || players.lname AS name, players.throws AS throws, start")
       .group("player_id, fname, lname, throws, start")
       .joins(:player)
       .order(:lname)

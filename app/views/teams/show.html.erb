@@ -61,7 +61,7 @@
 			<tr>
 				<th>Player</th>
 				<th>Throws</th>
-				<th>Starts</th>
+				<th>Starter</th>
 			</tr>
 		</thead>
 
@@ -70,7 +70,7 @@
 				<tr class="player">
 					<td><%= link_to(pitcher.name, player_path(pitcher.player_id)) %></td>
 					<td><%= pitcher.throws %></td>
-					<td><%#= pitcher.starts %></td>
+					<td><%= "X" if pitcher.start > 0 %></td>
 				</tr>
 			<% end %>
 		</tbody>
