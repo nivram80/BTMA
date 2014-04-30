@@ -23,8 +23,8 @@
 		</tbody>
 
 	</table>
-
-<table class="stats">
+<% if @new_players %>
+	<table class="stats">
 		<br />
 		<h2>New Players</h2>
 		<thead>
@@ -46,6 +46,7 @@
 		</tbody>
 
 	</table>
+<% end %>
 
 <div class="content_button left new_player_link">Add Player</div>
 <%= render :partial => "new_player", :locals => {:player => @player} %>
@@ -54,6 +55,7 @@
 </div>
 
 <div class="home left">
+
 	<h2>Pitchers</h2>
 	<table class="stats">
 
@@ -77,7 +79,7 @@
 
 	</table>
 
-
+	<br />
 	<h2>Coaches</h2>
 	<table class="stats">
 		<thead>
