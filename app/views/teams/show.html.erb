@@ -1,5 +1,5 @@
 <div class="home left">
-	<h2>Roster</h2>
+	<h2>Batters</h2>
 	<table class="stats">
 
 		<thead>
@@ -24,8 +24,31 @@
 
 	</table>
 
+<table class="stats">
+		<h2>New Players</h2>
+		<thead>
+			<tr>
+				<th>Player</th>
+				<th>Bats</th>
+				<th>Throws</th>
+			</tr>
+		</thead>
+
+		<tbody class="players">
+			<% @new_players.each do |np| %>
+				<tr class="player">
+					<td><%= link_to(np.name, player_path(np.player_id)) %></td>
+					<td><%= np.bats %></td>
+					<td><%= np.throws %></td>
+				</tr>
+			<% end %>
+		</tbody>
+
+	</table>
+
 <div class="content_button left new_player_link">Add Player</div>
 <%= render :partial => "new_player", :locals => {:player => @player} %>
+
 
 </div>
 

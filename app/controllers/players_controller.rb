@@ -60,7 +60,11 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.create(params[:player])
-    @position_players = BatterGameStat.select("player_id, players.fname AS fname, players.lname AS lname, players.bats AS bats, players.throws AS throws, position_id, positions.position AS position").group("batter_game_stats.player_id, batter_game_stats.position_id, fname, lname, bats, throws, position").joins(:player, :position).order(:lname)
+    @position_players = BatterGameStat
+      .select("player_id, players.fname || ' ' || players.lname AS name, players.bats AS bats, players.throws AS throws, array_agg(distinct positions.position) AS pos")
+      .group("player_id, fname, lname, throws, bats")
+      .joins(:player, :position)
+      .order(:lname)
     
     respond_to do |format|
       format.html
