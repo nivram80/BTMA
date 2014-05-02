@@ -18,7 +18,7 @@
 	border-radius: 4px;
 	width: 400px;
 }
-#teams .new_player p, #teams .new_coach p {
+#teams .new_player p, #teams .new_coach p, #games p {
 	margin-top: 10px;
 }
 #teams input[type=text], #games input[type=text] {
