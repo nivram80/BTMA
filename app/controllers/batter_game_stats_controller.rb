@@ -11,7 +11,7 @@ class BatterGameStatsController < ApplicationController
 	def new
 		@batter_game_stat = BatterGameStat.new
 		@positions = Position.all
-		@players = Player.all
+		@players = Player.where("team_id = ?", params[:id])
 
 		respond_to do |format|
       format.html

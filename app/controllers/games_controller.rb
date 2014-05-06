@@ -11,7 +11,7 @@ class GamesController < ApplicationController
 		@pitcher_stats = PitcherGameStat.where(:game_id => params[:id]).order(:pitcher_num)
 		@pitcher_game_stat = PitcherGameStat.new
 		@batter_game_stat = BatterGameStat.new
-		@players = Player.all
+		@players = Player.where("team_id = ?", params[:id])
 		@positions = Position.all
 	end
 
