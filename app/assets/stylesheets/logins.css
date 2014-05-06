@@ -87,7 +87,7 @@
 #logins .new_team_link_head {
 	margin-top: 20px;
 }
-#logins fieldset {
+#logins fieldset, #games fieldset {
 	margin: 0 auto;
 	width: 400px;
 	padding: 0px 10px 20px 10px;
@@ -98,4 +98,8 @@
 }
 #logins fieldset p, #logins .login_container p {
 	margin-top: 20px;
+}
+#games fieldset {
+	background-color: #F4DDBE;
+	border: 1px solid #000;
 }

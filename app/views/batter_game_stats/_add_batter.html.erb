@@ -27,21 +27,21 @@
 				<td><%= f.text_field :order_in_lineup, :autofocus => true %></td>
 				<td><%= f.collection_select(:player_id, @players, :id, :fullname) %></td>
 				<td><%= f.collection_select(:position_id, @positions, :id, :position) %></td>
-				<td><%= f.text_field :ab %></td>
-				<td><%= f.text_field :hits %></td>
-				<td><%= f.text_field :runs %></td>
-				<td><%= f.text_field :double %></td>
-				<td><%= f.text_field :triple %></td>
-				<td><%= f.text_field :hr %></td>
-				<td><%= f.text_field :rbi %></td>
-				<td><%= f.text_field :hb %></td>
-				<td><%= f.text_field :bb %></td>
-				<td><%= f.text_field :ibb %></td>
-				<td><%= f.text_field :so %></td>
-				<td><%= f.text_field :sb %></td>
-				<td><%= f.text_field :cs %></td>
+				<td><%= f.text_field :ab, :value => '0' %></td>
+				<td><%= f.text_field :hits, :value => '0' %></td>
+				<td><%= f.text_field :runs, :value => '0' %></td>
+				<td><%= f.text_field :double, :value => '0' %></td>
+				<td><%= f.text_field :triple, :value => '0' %></td>
+				<td><%= f.text_field :hr, :value => '0' %></td>
+				<td><%= f.text_field :rbi, :value => '0' %></td>
+				<td><%= f.text_field :hb, :value => '0' %></td>
+				<td><%= f.text_field :bb, :value => '0' %></td>
+				<td><%= f.text_field :ibb, :value => '0' %></td>
+				<td><%= f.text_field :so, :value => '0' %></td>
+				<td><%= f.text_field :sb, :value => '0' %></td>
+				<td><%= f.text_field :cs, :value => '0' %></td>
 				<%= f.hidden_field :game_id, :value => 1 %>
-				<td><%= f.submit "Save" %></td>			
+				<td><%= f.submit "Save it" %></td>			
 			</tr>
 		</tbody>
 		

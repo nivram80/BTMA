@@ -1,44 +1,50 @@
 <%= form_for @game do |f| %>
-	<div class="game_info">
 
-		<%= f.hidden_field :team_id, :value => session[:team_id] %>
-		<p>
-			<%= f.label :home_team? %>
-			<%= f.check_box :home_team %>
-		</p>
-		<p>
-			<%= f.text_field :game_datetime, :class => "datepicker", placeholder: "Game Date" %>
-			<%#= f.datetime_select :game_datetime, 
-				start_year: Time.now.year - 70, 
-				end_year: Time.now.year + 2, 
-				use_short_month: true, 
-				order: [:month, :day, :year],
-				ampm: true %>
-		</p>
-		<p>
-			<%#= f.text_field :time, placeholder: "Time" %>
-		</p>
-		<p>
-			<%= f.text_field :city, placeholder: "City" %>
-		</p>
-		<p>
-			<%= f.text_field :ballpark, placeholder: "Ballpark" %>
-		</p>
-		<p>
-			<%= f.text_field :opp_nickname, placeholder: "Opponent Nickname" %>
-		</p>
-		<p>
-			<%= f.text_field :opp_city, placeholder: "Opponent City" %>
-		</p>
-		<p>
-			<%= f.text_field :fahr_temp, placeholder: "Temperature" %>
-		</p>
-		<p>
-			<%= f.label :weather_id %>
-			<%= f.collection_select(:weather_id, @weathers, :id, :conditions) %>
-		</p>
-		<p>
-			<%= f.submit "Add Game" %>
-		</p>
-	</div>
+	<fieldset>
+		<legend>New Game</legend>
+		<div class="game_info">
+
+			<%= f.hidden_field :team_id, :value => session[:team_id] %>
+
+			<p>
+				<%= f.label :home_team? %>
+				<%= f.check_box :home_team %>
+			</p>
+
+			<p>
+				<%= f.text_field :game_datetime, :class => "datetimepicker", placeholder: "Game Date & Time" %>
+			</p>
+
+			<p>
+				<%= f.text_field :city, placeholder: "City" %>
+			</p>
+
+			<p>
+				<%= f.text_field :ballpark, placeholder: "Ballpark" %>
+			</p>
+
+			<p>
+				<%= f.text_field :opp_nickname, placeholder: "Opponent Nickname" %>
+			</p>
+
+			<p>
+				<%= f.text_field :opp_city, placeholder: "Opponent City" %>
+			</p>
+
+			<p>
+				<%= f.text_field :fahr_temp, placeholder: "Temperature" %>
+			</p>
+
+			<p>
+				<%= f.label :weather_id %>
+				<%= f.collection_select(:weather_id, @weathers, :id, :conditions) %>
+			</p>
+
+			<p>
+				<%= f.submit "Add Game" %>
+			</p>
+
+		</div>
+	</fieldset>
+	
 <% end %>

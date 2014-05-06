@@ -12,10 +12,12 @@
 //
 //= require jquery
 //= require jquery.ui.all
+//= require jquery.datetimepicker
 //= require jquery_ujs
 //= require_tree .
 $(function() {
-  $('.datepicker').datepicker({
-  	dateFormat: "yy-mm-dd"
+  $('.datetimepicker').datetimepicker({
+  	dateFormat: "yy-mm-dd",
+  	step: 15
  	});
 });
