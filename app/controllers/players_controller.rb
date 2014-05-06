@@ -60,7 +60,7 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.create(params[:player])
-    @new_players = Player.all(:conditions => ["id NOT IN (?) and id NOT IN (?) and team_id = ?", BatterGameStat.all.map(&:player_id), PitcherGameStat.all.map(&:player_id), params[:id]])
+    @new_players = Player.all(:conditions => ["id NOT IN (?) and id NOT IN (?) and team_id = ?", BatterGameStat.all.map(&:player_id), PitcherGameStat.all.map(&:player_id), params[:player][:team_id]])
     
     respond_to do |format|
       format.html
