@@ -21,7 +21,7 @@
 #teams .new_player p, #teams .new_coach p, #games p {
 	margin-top: 10px;
 }
-#teams input[type=text], #games input[type=text] {
+#teams input[type=text], #games .game_info input[type=text] {
 	width: 350px;
 	font-size: 30px;
 	-webkit-appearance: none;
@@ -41,7 +41,7 @@
 	border: 2px solid #715a38;
 	border-radius: 4px;
 }
-#teams input[type=submit], #games input[type=submit] {
+#teams input[type=submit], #games .game_info input[type=submit] {
 	-webkit-appearance: none;	
 	width: 350px;
 	font-size: 24px;
@@ -51,12 +51,12 @@
 	transition: all 1s ease;
 	padding: 5px 10px;
 }
-#teams input[type=submit]:hover, #games input[type=submit]:hover {
+#teams input[type=submit]:hover, #games .game_info input[type=submit]:hover {
 	color: #fff;
 	cursor: pointer;
 	border: 1px solid #fff;
 }
-#teams .submit, #games .submit {
+#teams .submit, #games .game_info .submit {
 	text-align: center;
 	margin: 20px 0px;
 }
