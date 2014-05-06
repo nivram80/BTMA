@@ -8,15 +8,17 @@ class TeamsController < ApplicationController
     @coach = Coach.new
     @coaches = Coach.where(team_id: params[:id])
     @player = Player.new
-    @new_players = Player.all(:conditions => ["id NOT IN (?) and id NOT IN (?)", BatterGameStat.all.map(&:player_id), PitcherGameStat.all.map(&:player_id)])
+    @new_players = Player.all(:conditions => ["id NOT IN (?) and id NOT IN (?) and team_id = ?", BatterGameStat.all.map(&:player_id), PitcherGameStat.all.map(&:player_id), params[:id]])
     
     @pitchers = PitcherGameStat
+      .where("players.team_id = ?", params[:id])
       .select("player_id, players.fname || ' ' || players.lname AS name, players.throws AS throws, start")
       .group("player_id, fname, lname, throws, start")
       .joins(:player)
       .order(:lname)
 
     @position_players = BatterGameStat
+      .where("players.team_id = ?", params[:id])
       .select("player_id, players.fname || ' ' || players.lname AS name, players.bats AS bats, players.throws AS throws, array_agg(distinct positions.position) AS pos")
       .group("player_id, fname, lname, throws, bats")
       .joins(:player, :position)
